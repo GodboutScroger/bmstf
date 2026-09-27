@@ -1,0 +1,8 @@
+# Table 2, the ultrasound channel discarded
+extends: [insilico/base, filter/two_regime, policy/two_barrier]
+experiment:
+  name: ablation_no_ultrasound
+  reported_result: Table 2, the ultrasound channel discarded
+  arms: ["no_ultrasound"]
+outputs:
+  directory: runs/ablation_no_ultrasound

@@ -1,0 +1,8 @@
+# Table 2, the predictive spread halved
+extends: [insilico/base, filter/two_regime, policy/two_barrier]
+experiment:
+  name: ablation_spread_half
+  reported_result: Table 2, the predictive spread halved
+  arms: ["spread_half"]
+outputs:
+  directory: runs/ablation_spread_half

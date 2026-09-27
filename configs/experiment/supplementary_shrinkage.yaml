@@ -1,0 +1,10 @@
+# Table 3 panel B: the fixed-shift diagnostic at one, two and three months.
+extends: [insilico/base, filter/two_regime, policy/two_barrier]
+experiment:
+  name: supplementary_shrinkage
+  reported_result: Table 3 panel B
+  arms: [BM-STF, spread_half, spread_double]
+diagnostic:
+  shifts_months: [0, 1, 2, 3]
+outputs:
+  directory: runs/shrinkage

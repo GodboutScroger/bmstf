@@ -1,0 +1,47 @@
+BM-STF release — third-party notices and provenance
+
+This repository carries no third-party code. It depends on, and where noted
+cites, the following externally maintained material. Versions below are the
+ones reported by the manuscript's executed in-silico study or the ones this release
+is tested against.
+
+Runtime dependencies
+--------------------
+NumPy                 BSD-3-Clause    https://numpy.org/            >=2.0,<3
+SciPy                 BSD-3-Clause    https://scipy.org/            >=1.14,<2
+scikit-learn          BSD-3-Clause    https://scikit-learn.org/     >=1.5,<2
+PyYAML                MIT             https://pyyaml.org/           >=6.0,<7
+
+The manuscript reports the analysis environment as Python 3.9.6 with
+NumPy 2.0.2 (Code availability). This release targets Python >= 3.10 with the
+dependency ranges above; see claim_to_code.json for the recorded deviation.
+
+Cited imaging and hemodynamic resources
+--------------------------------------
+AAA-100 and AAA-L regenerated CFD sets, Rygiel et al.,
+  "Wall Shear Stress Estimation in Abdominal Aortic Aneurysms: Towards
+  Generalisable Neural Surrogate Models", arXiv:2507.22817.
+  Used as the surrogate-substrate parity comparators of Table 5 panel B. The
+  release does not redistribute the meshes or solver fields.
+
+Merlin CT vision-language foundation model, Blankemeier et al., Nature.
+  Cited as the frozen abdominal-CT embedding used as image context by the
+  hazard head. Weights are not redistributed here.
+
+Intracranial geometry stress-test set, Lannelongue et al.,
+  npj Digital Medicine 9, 212 (2026).
+  Used by the manuscript as a cross-anatomy stress test only.
+
+Clinical cohorts (not redistributed)
+-----------------------------------
+The retrospective supporting cohort and the silent-mode arm described in
+Table 4 are de-identified surveillance records held by Sites A, B and C under
+their own data-sharing agreements. No record, derived mesh, imaging field or
+boundary-condition prior estimated from those records is included in this
+repository. Every cohort-level cell of Tables 4 and 5 is reported NOT_RUN.
+
+Reference literature
+--------------------
+The bibliography of the manuscript is the provenance record for every entry
+above. Titles, venues, volumes and page ranges are reproduced from the
+manuscript's own reference list.

@@ -1,0 +1,8 @@
+# Table 2, the event barrier dropped
+extends: [insilico/base, filter/two_regime, policy/two_barrier]
+experiment:
+  name: ablation_single_barrier
+  reported_result: Table 2, the event barrier dropped
+  arms: ["single_barrier"]
+outputs:
+  directory: runs/ablation_single_barrier

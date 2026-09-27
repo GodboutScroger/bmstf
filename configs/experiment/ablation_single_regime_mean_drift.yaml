@@ -1,0 +1,8 @@
+# Table 2, the switching latent replaced by the occupancy-weighted population drift
+extends: [insilico/base, filter/two_regime, policy/two_barrier]
+experiment:
+  name: ablation_single_regime_mean_drift
+  reported_result: Table 2, the switching latent replaced by the occupancy-weighted population drift
+  arms: ["single_regime_mean_drift"]
+outputs:
+  directory: runs/ablation_single_regime_mean_drift

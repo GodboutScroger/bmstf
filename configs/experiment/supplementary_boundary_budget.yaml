@@ -1,0 +1,10 @@
+# Sensitivity of the executed study to a wider boundary-condition budget and a lower
+# ultrasound rate: N_b is doubled and the topology inflation widened, which is the
+# stratum the decomposed covariance is supposed to act on.
+extends: [insilico/high_noise, filter/two_regime, policy/two_barrier]
+experiment:
+  name: supplementary_boundary_budget
+  reported_result: release sensitivity run, not a manuscript result
+  arms: [BM-STF, scalar_noise, snapshot]
+outputs:
+  directory: runs/boundary_budget

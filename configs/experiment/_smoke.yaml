@@ -1,0 +1,14 @@
+# for unit-test smoke only; do not use for reporting
+extends: [insilico/base, filter/two_regime, policy/two_barrier]
+experiment:
+  name: _smoke
+  reported_result: none
+  arms: [BM-STF]
+study:
+  seeds: 2
+  patients: 8
+  calibration_patients: 8
+  horizon_months: 24
+  forecast_paths: 8
+outputs:
+  directory: runs/_smoke

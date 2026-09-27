@@ -1,0 +1,23 @@
+# Scale the verification driver executes. Every number it reports states this scale.
+extends: [insilico/base, filter/two_regime, policy/two_barrier]
+experiment:
+  name: supplementary_verification
+  reported_result: release verification, not a manuscript result
+verification:
+  seeds: 3
+  patients: 60
+  calibration_patients: 150
+  horizon_months: 36
+  forecast_paths: 64
+  base_seed: 20260925
+  arms:
+    - BM-STF
+    - snapshot
+    - scalar_noise
+    - no_ultrasound
+    - single_regime_mean_drift
+    - single_regime_quiescent
+    - single_barrier
+    - diameter_only
+    - spread_half
+    - spread_double

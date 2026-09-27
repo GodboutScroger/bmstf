@@ -1,0 +1,8 @@
+# Table 2, the decomposed covariance replaced by a tuned scalar noise with the bias coordinates dropped
+extends: [insilico/base, filter/two_regime, policy/two_barrier]
+experiment:
+  name: ablation_scalar_noise
+  reported_result: Table 2, the decomposed covariance replaced by a tuned scalar noise with the bias coordinates dropped
+  arms: ["scalar_noise"]
+outputs:
+  directory: runs/ablation_scalar_noise

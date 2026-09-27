@@ -1,0 +1,8 @@
+# Sensitivity of the executed study to a larger boundary-condition budget.
+extends: [insilico/base]
+cohort:
+  us_probability: 0.20
+marginalisation:
+  boundary_draws: 128
+  reconstruction_draws: 16
+  topology_inflation: 2.0

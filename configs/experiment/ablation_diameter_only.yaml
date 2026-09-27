@@ -1,0 +1,8 @@
+# Table 2, the hemodynamic channels discarded
+extends: [insilico/base, filter/two_regime, policy/two_barrier]
+experiment:
+  name: ablation_diameter_only
+  reported_result: Table 2, the hemodynamic channels discarded
+  arms: ["diameter_only"]
+outputs:
+  directory: runs/ablation_diameter_only

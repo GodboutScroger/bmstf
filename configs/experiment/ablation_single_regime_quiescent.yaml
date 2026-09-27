@@ -1,0 +1,8 @@
+# Table 2, the quiescent drift with doubled process noise
+extends: [insilico/base, filter/two_regime, policy/two_barrier]
+experiment:
+  name: ablation_single_regime_quiescent
+  reported_result: Table 2, the quiescent drift with doubled process noise
+  arms: ["single_regime_quiescent"]
+outputs:
+  directory: runs/ablation_single_regime_quiescent

@@ -1,0 +1,37 @@
+# Cohort process, study scale and system. The study block is the manuscript's reported run.
+environment:
+  reported_python: "3.9.6"
+  reported_numpy: "2.0.2"
+  reported_run: "python3 bmstf_sim.py --seeds 20 --patients 300 --jobs 5"
+study:
+  seeds: 20
+  patients: 300
+  calibration_patients: 6000
+  horizon_months: 36
+  forecast_paths: 256
+  women_share: 0.19
+  base_seed: 20260925
+cohort:
+  interval_median_months: 8.6
+  interval_log_sigma: 0.42
+  interval_min_months: 3
+  interval_max_months: 24
+  us_probability: 0.35
+  us_standard_deviation_mm: 1.10
+  initial_diameter_low_mm: 30.0
+  initial_diameter_high_mm: 54.0
+  initial_burden_low: 0.18
+  initial_burden_high: 0.55
+marginalisation:
+  boundary_draws: 64
+  reconstruction_draws: 8
+  topology_inflation: 1.6
+  jitter_mm: 0.12
+  correlation_mm: 9.0
+system:
+  dimension: 10
+  rate_quiescent_to_active: 0.0300
+  rate_active_to_quiescent: 0.0900
+  # The pooled growth rate 2.38 mm/year and its 1.60 mm/year between-patient spread
+  # are structural constants of the state layout, not knobs: process/regimes.py holds
+  # them and process/cohort.py draws every growth offset from them.

@@ -1,0 +1,26 @@
+# Resources this release cites. Each landing page below was fetched from the release
+# host when this list was assembled and returned a success status carrying the cited
+# work; a shipping publisher whose TLS handshake this host cannot complete over the
+# default client is still listed, because the page itself served the request.
+# Re-check them on demand with `python -m bmstf.cli.verify --live`; the default
+# verification run stays offline so its report is a function of this repository only.
+# Nothing is redistributed here; the in-silico study needs no external data.
+# Rygiel et al., wall shear stress estimation in abdominal aortic aneurysms
+#   terms: arXiv preprint, arXiv non-exclusive licence
+#   role : source of the regenerated AAA-100 / AAA-L CFD that Tables 5 panel B is parity-tested on
+https://arxiv.org/abs/2507.22817
+# Blankemeier et al., Merlin: a computed tomography vision-language foundation model and dataset
+#   terms: Nature article, publisher's terms
+#   role : the frozen abdominal-CT embedding the hazard head takes as image context
+https://doi.org/10.1038/s41586-026-10181-8
+# Lannelongue et al., physics-constrained graph network for intracranial aneurysm hemodynamics
+#   terms: npj Digital Medicine, open access
+#   role : the public intracranial geometries of the cross-anatomy stress test, never pooled with the aortic rows
+https://www.nature.com/articles/s41746-026-02404-z
+#
+# Checked and not listed:
+#   AAA-100 / AAA-L regenerated CFD solver fields - no public deposit located.
+#   Merlin CT foundation-model weights - the model card hosts are gated, so no
+#     account-free link could be verified.
+#   Retrospective supporting cohort and silent-mode arm (Sites A, B, C) -
+#     de-identified surveillance records held by the sites; not redistributable.

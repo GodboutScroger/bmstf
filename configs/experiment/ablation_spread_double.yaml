@@ -1,0 +1,8 @@
+# Table 2, the predictive spread doubled
+extends: [insilico/base, filter/two_regime, policy/two_barrier]
+experiment:
+  name: ablation_spread_double
+  reported_result: Table 2, the predictive spread doubled
+  arms: ["spread_double"]
+outputs:
+  directory: runs/ablation_spread_double

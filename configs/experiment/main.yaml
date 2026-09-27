@@ -1,0 +1,8 @@
+# Table 1 and Table 2 primary result
+extends: [insilico/base, filter/two_regime, policy/two_barrier]
+experiment:
+  name: main
+  reported_result: Table 1 and Table 2 primary result
+  arms: [BM-STF, snapshot, literal_bands, calibrated_bands]
+outputs:
+  directory: runs/main

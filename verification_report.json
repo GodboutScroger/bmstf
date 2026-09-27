@@ -1,0 +1,3747 @@
+{
+  "checks": [
+    {
+      "detail": {
+        "gap": 2.220446049250313e-16
+      },
+      "evidence": "Phi(3) differs from Phi(1)^3 by 2.220e-16, the matrix-exponential semigroup property",
+      "family": "closed_form",
+      "name": "transition_semigroup_closed_form",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "gap": 3.6355696231282764e-11
+      },
+      "evidence": "Gamma(2.5) differs from a 20000-substep Riemann sum of Phi(s)B by 3.636e-11, the trapezoidal quadrature's own error",
+      "family": "closed_form",
+      "name": "input_gain_matches_riemann_sum",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "gap": 6.168633047528541e-06
+      },
+      "evidence": "Q(2.5) differs from a 20000-substep Riemann sum of Phi(s) Q Phi(s)^T by 6.169e-06, the trapezoidal quadrature's own error",
+      "family": "closed_form",
+      "name": "process_covariance_matches_riemann_sum",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "row_gap": 0.0,
+        "semigroup_gap": 1.1102230246251565e-16,
+        "stationary_gap": 2.1094237467877974e-14
+      },
+      "evidence": "row sums deviate by 0.000e+00, Pi(1)^2 differs from Pi(2) by 1.110e-16, Pi(1)^500 differs from the stationary distribution by 2.109e-14",
+      "family": "closed_form",
+      "name": "regime_transition_row_stochastic",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "gap": 1.1102230246251565e-16
+      },
+      "evidence": "the left null vector of L differs from the stationary weights by 1.110e-16",
+      "family": "closed_form",
+      "name": "stationary_distribution_from_generator",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "covariance_gap": 0.0031403730225811888,
+        "mean_gap": 0.0009393916268343738
+      },
+      "evidence": "the collapsed mean matches a weight-proportional sample of 120k draws to 9.394e-04 and the covariance to 3.140e-03",
+      "family": "closed_form",
+      "name": "moment_match_preserves_two_moments",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "prior": [
+          0.7151161836964485,
+          0.28488381630355153
+        ],
+        "row_gap": 1.1102230246251565e-16
+      },
+      "evidence": "the conditional mixing rows sum to one to 1.110e-16 and the predictive weights are positive (0.7151, 0.2849)",
+      "family": "closed_form",
+      "name": "conditional_mixing_rows_normalised",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "gap": 7.653599976009673e-15
+      },
+      "evidence": "the Joseph-form covariance differs from the short form by 7.654e-15; the gain and the mean satisfy their definitions",
+      "family": "closed_form",
+      "name": "kalman_update_matches_standard_form",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "gap": 1.1102230246251565e-15
+      },
+      "evidence": "the Wilson upper bound solves the score equation (p_hat - p)/sqrt(p(1-p)/n) = -z to 1.110e-15 at five (k, n) pairs",
+      "family": "closed_form",
+      "name": "wilson_bound_solves_the_score_equation",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "gap": 1.6714499657788373e-05
+      },
+      "evidence": "the same bound agrees with SciPy's binomtest Wilson interval to 1.671e-05, the library's own root-finding tolerance",
+      "family": "closed_form",
+      "name": "wilson_bound_corroborated_by_binomtest",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "gap": 6.480312276957445e-05
+      },
+      "evidence": "the sample CRPS 0.455595 matches the closed form 0.455530 to 6.480e-05 on 200k standard normal draws",
+      "family": "closed_form",
+      "name": "crps_sample_matches_gaussian_closed_form",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "gap": 0.0010085320984746238
+      },
+      "evidence": "the mixture CRPS 0.691417 matches the sample estimate 0.690409 to 1.009e-03",
+      "family": "closed_form",
+      "name": "crps_mixture_matches_sample",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "gap": 0.008424114156212525
+      },
+      "evidence": "the Gaussian energy score 0.412215 matches 8000 draws 0.420639 to 8.424e-03",
+      "family": "closed_form",
+      "name": "energy_score_closed_form_matches_samples",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "gap": 0.0
+      },
+      "evidence": "the adjusted values differ from a from-scratch step-down by 0.000e+00 over 11 contrasts",
+      "family": "closed_form",
+      "name": "holm_step_down_matches_definition",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "gap": 0.0
+      },
+      "evidence": "the exact p value 0.375000 equals the enumerated count over 64 sign vectors",
+      "family": "closed_form",
+      "name": "sign_flip_p_value_matches_enumeration",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "gap": 2.7755575615628914e-17
+      },
+      "evidence": "the interval matches a hand-rolled bootstrap recipe to 2.776e-17",
+      "family": "closed_form",
+      "name": "percentile_bootstrap_matches_manual_recipe",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "gap": 0.0
+      },
+      "evidence": "the rank-based area 0.708571428571 matches scikit-learn 0.708571428571",
+      "family": "closed_form",
+      "name": "roc_auc_matches_sklearn",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "gap": 0.0
+      },
+      "evidence": "the DeLong variance matches a double-loop placement computation to 0.000e+00",
+      "family": "closed_form",
+      "name": "delong_variance_matches_double_loop",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "difference": 0.0
+      },
+      "evidence": "paired difference 0.000000 with standard error 3.162278e-08 and p 1.000000",
+      "family": "closed_form",
+      "name": "paired_contrast_is_finite",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "gap": 0.0
+      },
+      "evidence": "ECE 0.178571 equals the weighted bin gap recomputed by hand 0.178571",
+      "family": "closed_form",
+      "name": "expected_calibration_error_matches_binning",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "nri": 0.0
+      },
+      "evidence": "NRI 0.000000 satisfies its own definition on 7 decisions",
+      "family": "closed_form",
+      "name": "net_reclassification_matches_definition",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "gap": 0.0
+      },
+      "evidence": "net benefit 0.345000000000 against the hand expression 0.345000000000",
+      "family": "closed_form",
+      "name": "net_benefit_matches_closed_form",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "hazard_gap": 0.0,
+        "rate_gap": 0.0
+      },
+      "evidence": "the vectorised hazard and stratum lookup match the scalar definitions to 0.000e+00 over 400 diameters",
+      "family": "closed_form",
+      "name": "vectorised_hazard_matches_scalar_definition",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "gap": 0.0
+      },
+      "evidence": "1 - prod(1 - chi) matches a hand loop to 0.000e+00",
+      "family": "closed_form",
+      "name": "cumulative_hazard_matches_prefix_product",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "gap": 0.0
+      },
+      "evidence": "the gate returns 9.0 months, equal to the largest admissible grid horizon evaluated directly",
+      "family": "closed_form",
+      "name": "gate_month_matches_direct_evaluation",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "gap": 4.440892098500626e-16
+      },
+      "evidence": "the symmetric square root reconstructs a rank-deficient covariance to 4.441e-16, which is what the zero-noise blocks of Q_r(Delta) require",
+      "family": "closed_form",
+      "name": "singular_covariance_square_root_is_exact",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "smallest_eigenvalue": 0.0009732059996530179
+      },
+      "evidence": "the marginalised covariance is positive definite (smallest eigenvalue 9.732e-04) and equals the sum of its three terms to 0.000e+00",
+      "family": "closed_form",
+      "name": "marginalised_covariance_is_positive_definite",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "gap": 0.0
+      },
+      "evidence": "the vectorised boundary-condition budget matches an explicit per-draw loop to 0.000e+00 on 64 draws",
+      "family": "closed_form",
+      "name": "boundary_budget_matches_explicit_loop",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "gap": 0.0
+      },
+      "evidence": "the low-shear burden 0.000000000000 equals a direct node enumeration to 0.000e+00",
+      "family": "closed_form",
+      "name": "surrogate_burden_matches_enumeration",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "smallest": 0.00012532577774523296
+      },
+      "evidence": "all four topology classes at three scales give positive-definite covariances (smallest eigenvalue 1.253e-04)",
+      "family": "closed_form",
+      "name": "residual_lookup_positive_definite",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "shape": [
+          64,
+          5
+        ]
+      },
+      "evidence": "64 points in five dimensions lie strictly inside the unit cube and repeat exactly for a fixed seed (gap 0.000e+00)",
+      "family": "closed_form",
+      "name": "scrambled_sobol_is_deterministic_in_unit_cube",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "gap": 1.1102230246251565e-16
+      },
+      "evidence": "the bisection reproduces the requested ILT fraction to 1.110e-16 at four burden levels",
+      "family": "closed_form",
+      "name": "geometry_ilt_solver_hits_target",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "shares": {
+          "boundary": 2.6596311625869782e-33,
+          "reconstruction": 4.1285075503313676e-07,
+          "surrogate": 0.9999995871492449
+        }
+      },
+      "evidence": "the boundary, reconstruction and surrogate trace shares sum to one (0.000, 0.000, 1.000)",
+      "family": "closed_form",
+      "name": "budget_shares_sum_to_one",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "filtered_gap": 0.2203075394642534,
+        "gap": 3.3306690738754696e-16
+      },
+      "evidence": "the smoothed means differ from E[z | y] of the chain's joint Gaussian by 3.331e-16 over 6 observations, and they move 2.203e-01 away from the filtered means, so the agreement is not the trivial no-op",
+      "family": "closed_form",
+      "name": "smoother_matches_dense_joint_gaussian",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "arms": [
+          "BM-STF",
+          "snapshot",
+          "scalar_noise",
+          "no_ultrasound",
+          "single_regime_mean_drift",
+          "single_regime_quiescent",
+          "single_barrier",
+          "diameter_only",
+          "spread_half",
+          "spread_double"
+        ],
+        "undefined": [
+          "snapshot.burden_change_rmse"
+        ]
+      },
+      "evidence": "the study ran 3 seeds of 60 histories over 10 arms; every aggregate metric is finite except ['snapshot.burden_change_rmse'], and the only undefined row is the snapshot's between-scan change, which its point state cannot estimate",
+      "family": "execution",
+      "name": "study_execution_all_metrics_finite",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "reported_decisions": 282
+      },
+      "evidence": "no aneurysm-related event fell inside a recommended interval among the 282 reported decisions of the full mechanism, so the alpha_2 = 0.01 gate carries no information here; the manuscript reports 75 events among 7,617 feasible intervals at 20 seeds of 300 histories",
+      "family": "execution",
+      "name": "event_barrier_resolvable_at_this_scale",
+      "status": "NOT_RUN"
+    },
+    {
+      "detail": {
+        "coverage": 0.8712532299741603
+      },
+      "evidence": "the 12-month diameter coverage is 0.871 against the nominal 0.90 at the executed scale (3 seeds of 60)",
+      "family": "execution",
+      "name": "twelve_month_diameter_coverage_near_nominal",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "auroc": 0.8521325061151691
+      },
+      "evidence": "the 12-month crossing AUROC is 0.852, inside (0.55, 0.99) so the discrimination check is not vacuous",
+      "family": "execution",
+      "name": "crossing_discrimination_below_ceiling",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "gap": 0.06217054263565902
+      },
+      "evidence": "the filtered forecast covers the true low-shear burden 0.062 more often than the single-scan snapshot at the executed scale",
+      "family": "execution",
+      "name": "filtered_burden_coverage_exceeds_snapshot",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "gap": -1.1363518755914686
+      },
+      "evidence": "the 12-month diameter CRPS is 1.136 lower for the filtered forecast than for the snapshot (lower is better)",
+      "family": "execution",
+      "name": "filtered_crps_better_than_snapshot",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "conditional": 0.0,
+        "interval": [
+          -0.025000000000000022,
+          0.039999999999999925
+        ],
+        "manuscript_reports": {
+          "conditional": 0.044,
+          "unconditional": 0.011
+        },
+        "per_seed_pairs": [
+          0.039999999999999925,
+          -0.023255813953488413,
+          -0.025000000000000022
+        ],
+        "unconditional": 0.0027519379844961334
+      },
+      "evidence": "the decomposed covariance buys +0.000 of high-noise-stratum burden coverage against +0.003 unconditional, a difference of differences of -0.003 with a seed-paired 95 % interval [-0.025, +0.040]; the paired interval of the difference of differences spans zero, so this scale cannot separate the two channels",
+      "family": "execution",
+      "name": "decomposed_covariance_helps_on_high_noise_scans",
+      "status": "NOT_RUN"
+    },
+    {
+      "detail": {
+        "gap": 0.06547803617571057
+      },
+      "evidence": "the single-regime filter loses 0.065 of burden coverage, the component the switching latent is built to carry",
+      "family": "execution",
+      "name": "switching_latent_carries_burden_calibration",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "gap": 0.017173215701595967
+      },
+      "evidence": "discarding the hemodynamic channels raises the between-scan burden RMSE by 0.0172, the one quantity the diameter channels cannot observe",
+      "family": "execution",
+      "name": "hemodynamic_channel_refines_burden_tracking",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "high": 0.9955555555555556,
+        "low": 0.6367377260981912,
+        "middle": 0.8712532299741603
+      },
+      "evidence": "halving the predictive spread covers 0.637, the nominal spread 0.871 and doubling 0.996",
+      "family": "execution",
+      "name": "spread_scaling_moves_coverage_monotonically",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "gap": 0.03160206718346237
+      },
+      "evidence": "discarding the ultrasound channel moves diameter coverage by 0.032, a null at the executed observation density",
+      "family": "execution",
+      "name": "ultrasound_channel_is_not_separable_at_this_density",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "escalate": 0.2834542788233723
+      },
+      "evidence": "the escalate fraction is 0.283 on 60 histories per seed",
+      "family": "execution",
+      "name": "escalate_fraction_in_unit_interval",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "interval": 14.390369501175186
+      },
+      "evidence": "the mean pooled recommended interval is 14.390 months, inside the [3, 36] grid",
+      "family": "execution",
+      "name": "recommended_interval_on_the_action_grid",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "filtered": 0.5904559589035495,
+        "raw": 0.9494884971954912
+      },
+      "evidence": "the filtered diameter error is 0.590 mm against 0.949 mm for the raw readings on the same record",
+      "family": "execution",
+      "name": "filter_reduces_diameter_error_against_raw_readings",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "crossing_final": 0.375,
+        "event_final": 0.05521497863906417
+      },
+      "evidence": "the crossing and event curves are non-decreasing and inside [0, 1] over 36 months from 64 paths",
+      "family": "execution",
+      "name": "forecast_curves_monotone_and_bounded",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "decision": {
+          "admissible": 0.0,
+          "crossing_probability": 0.0,
+          "escalate": 1.0,
+          "event_probability": 0.0027861035348304107,
+          "feasible_crossing_upper": 0.04056642559648847,
+          "gate_month": 3.0,
+          "horizon_months": 3.0
+        }
+      },
+      "evidence": "the read-out returns 3.0 months with escalate=True and admissibility False",
+      "family": "execution",
+      "name": "policy_read_out_execution",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "energy": 644.6555820606013
+      },
+      "evidence": "the one-step validation energy score at the default latent dimension is 644.655582 over 8 records",
+      "family": "execution",
+      "name": "energy_score_validation_execution",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "count": 8
+      },
+      "evidence": "8 Table 3 arithmetic checks executed (3 monotonicity contrasts)",
+      "family": "execution",
+      "name": "manuscript_arithmetic_checks_executed",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "digest": "5d58b33a1ca38fdac6ea198a2134750a11f5f6b1cba3a0293a1796ad9bb4b5a7",
+        "mode": "644"
+      },
+      "evidence": "the parameter digest 5d58b33a1ca3 survives a save and load after zeroing; the file mode is 644 and the stored seed is 11",
+      "family": "execution",
+      "name": "checkpoint_round_trip_execution",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "estimates": "{'crossing_rate': {'estimate': 0.13874088038295554, 'lower': 0.05, 'upper': 0.275, 'level': 0.95}, 'event_rate': {'estimate': 0.08342747816800561, 'lower': 0.0, 'upper': 0.175, 'level': 0.95}, 'deferral': {'point': 0.2, 'censored_share': 0.025, 'cap': 0.2}, 'imaging_burden': 16.254724242935687, 'escalate_fraction': 0.2383050043698655, 'by_band': {'40-45': {'escalate': 0.0, 'crossing': 0.15, 'event': 0.1, 'interval': 18.0, 'count': 20.0}, '45-55': {'escalate': 0.5, 'crossing': 0.15, 'event': 0.1, 'interval': 12.75, 'count': 20.0}}}"
+      },
+      "evidence": "the weighted replay returns a crossing rate of 0.1387 with interval [0.0500, 0.2750], an imaging burden of 16.255 months and an escalate fraction of 0.238",
+      "family": "execution",
+      "name": "ipw_replay_execution",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "mean_weight": 2.5554632296593827
+      },
+      "evidence": "all 40 stabilised inverse-intensity weights are positive (mean 2.5555)",
+      "family": "execution",
+      "name": "visit_intensity_weights_positive",
+      "status": "PASS"
+    },
+    {
+      "detail": {},
+      "evidence": "the fitted censoring survival curve is non-increasing over 40 months",
+      "family": "execution",
+      "name": "censoring_survival_non_increasing",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "bands_without_records": [
+          "30-40",
+          "55-70"
+        ],
+        "calibrated_schedule": {
+          "escalated_bands": 4.0,
+          "schedule_30-40": -1.0,
+          "schedule_40-45": -1.0,
+          "schedule_45-55": -1.0,
+          "schedule_55-70": -1.0
+        },
+        "quiet_dense_escalated": [
+          "30-40",
+          "55-70"
+        ],
+        "quiet_dense_schedule": {
+          "escalated_bands": 2.0,
+          "schedule_30-40": -1.0,
+          "schedule_40-45": 36.0,
+          "schedule_45-55": 36.0,
+          "schedule_55-70": -1.0
+        },
+        "quiet_sparse_escalated": [
+          "30-40",
+          "40-45",
+          "45-55",
+          "55-70"
+        ],
+        "wilson_upper_at_zero_of_twenty": 0.11917651812679673
+      },
+      "evidence": "on a fixture crossing at one horizon in five the calibrated policy escalates 4 of 4 bands; with no crossings and 200 records per band it schedules 36 months, the longest grid horizon, for the two bands it has records for and escalates the two it does not; with no crossings and only 20 records per band the Wilson upper bound of zero successes is 0.1192, still above alpha_1 = 0.1, so all 4 escalate; the literal schedule covers 4 bands and never escalates",
+      "family": "execution",
+      "name": "band_policies_execution",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "point": 0.0
+      },
+      "evidence": "the point extrapolation returns 0.0, the binary forecast the band comparator reads out",
+      "family": "execution",
+      "name": "band_extrapolation_is_binary",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "gap": 1.1102230246251565e-16
+      },
+      "evidence": "kappa 0.745000671051 matches scikit-learn 0.745000671051",
+      "family": "closed_form",
+      "name": "cohen_kappa_matches_sklearn",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "gap": 0.0
+      },
+      "evidence": "ICC(2,1) 0.856657570000 matches a mean-square assembly written from the definition",
+      "family": "closed_form",
+      "name": "icc_two_one_matches_mean_square_assembly",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "interval": {
+          "estimate": 0.009040804913609726,
+          "level": 0.95,
+          "lower": -0.27015134846446764,
+          "upper": 0.28006700557268216
+        }
+      },
+      "evidence": "the record-level bootstrap brackets the point estimate (-0.2702 <= 0.0090 <= 0.2801)",
+      "family": "closed_form",
+      "name": "cluster_bootstrap_shapes_an_interval",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 1 panel A, row delta",
+        "consistent": true,
+        "detail": {
+          "comparator": 0.629,
+          "gap": 0.0,
+          "recomputed_delta": 0.263,
+          "reference": 0.892,
+          "reported_delta": 0.263,
+          "table": "1A"
+        },
+        "expected": 0.263,
+        "name": "table1_delta_1a_coverage_diameter",
+        "observed": 0.263,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 1 panel A, row delta: observed 0.263000 against reported 0.263000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table1_delta_1a_coverage_diameter",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 1 panel A, row delta",
+        "consistent": true,
+        "detail": {
+          "comparator": 0.761,
+          "gap": 0.0009999999999999731,
+          "recomputed_delta": 0.14,
+          "reference": 0.901,
+          "reported_delta": 0.141,
+          "table": "1A"
+        },
+        "expected": 0.141,
+        "name": "table1_delta_1a_coverage_burden",
+        "observed": 0.14,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 1 panel A, row delta: observed 0.140000 against reported 0.141000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table1_delta_1a_coverage_burden",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 1 panel A, row delta",
+        "consistent": true,
+        "detail": {
+          "comparator": 0.101,
+          "gap": 6.938893903907228e-18,
+          "recomputed_delta": -0.05700000000000001,
+          "reference": 0.044,
+          "reported_delta": -0.057,
+          "table": "1A"
+        },
+        "expected": -0.057,
+        "name": "table1_delta_1a_expected_calibration_error",
+        "observed": -0.05700000000000001,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 1 panel A, row delta: observed -0.057000 against reported -0.057000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table1_delta_1a_expected_calibration_error",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 1 panel A, row delta",
+        "consistent": true,
+        "detail": {
+          "comparator": 0.903,
+          "gap": 1.3877787807814457e-17,
+          "recomputed_delta": 0.015000000000000013,
+          "reference": 0.918,
+          "reported_delta": 0.015,
+          "table": "1A"
+        },
+        "expected": 0.015,
+        "name": "table1_delta_1a_auroc_crossing",
+        "observed": 0.015000000000000013,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 1 panel A, row delta: observed 0.015000 against reported 0.015000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table1_delta_1a_auroc_crossing",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 1 panel A, band extrapolation",
+        "consistent": true,
+        "detail": {
+          "comparator": 0.317,
+          "gap": 0.0010000000000000009,
+          "recomputed_delta": -0.273,
+          "reference": 0.044,
+          "reported_delta": -0.274,
+          "table": "1A-bands"
+        },
+        "expected": -0.274,
+        "name": "table1_delta_1a-bands_expected_calibration_error",
+        "observed": -0.273,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 1 panel A, band extrapolation: observed -0.273000 against reported -0.274000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table1_delta_1a-bands_expected_calibration_error",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 1 panel A, band extrapolation",
+        "consistent": true,
+        "detail": {
+          "comparator": 0.685,
+          "gap": 0.0009999999999999731,
+          "recomputed_delta": 0.23299999999999998,
+          "reference": 0.918,
+          "reported_delta": 0.232,
+          "table": "1A-bands"
+        },
+        "expected": 0.232,
+        "name": "table1_delta_1a-bands_auroc_crossing",
+        "observed": 0.23299999999999998,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 1 panel A, band extrapolation: observed 0.233000 against reported 0.232000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table1_delta_1a-bands_auroc_crossing",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 1 panel B, row delta",
+        "consistent": true,
+        "detail": {
+          "comparator": 0.284,
+          "gap": 2.7755575615628914e-17,
+          "recomputed_delta": 0.09400000000000003,
+          "reference": 0.378,
+          "reported_delta": 0.094,
+          "table": "1B"
+        },
+        "expected": 0.094,
+        "name": "table1_delta_1b_escalate_fraction",
+        "observed": 0.09400000000000003,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 1 panel B, row delta: observed 0.094000 against reported 0.094000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table1_delta_1b_escalate_fraction",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 1 panel B, row delta",
+        "consistent": true,
+        "detail": {
+          "comparator": 0.091,
+          "gap": 0.0,
+          "recomputed_delta": -0.063,
+          "reference": 0.028,
+          "reported_delta": -0.063,
+          "table": "1B"
+        },
+        "expected": -0.063,
+        "name": "table1_delta_1b_crossing_feasible",
+        "observed": -0.063,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 1 panel B, row delta: observed -0.063000 against reported -0.063000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table1_delta_1b_crossing_feasible",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 1 panel B, row delta",
+        "consistent": true,
+        "detail": {
+          "comparator": 0.189,
+          "gap": 0.0009999999999999974,
+          "recomputed_delta": -0.026999999999999996,
+          "reference": 0.162,
+          "reported_delta": -0.026,
+          "table": "1B"
+        },
+        "expected": -0.026,
+        "name": "table1_delta_1b_crossing_pooled",
+        "observed": -0.026999999999999996,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 1 panel B, row delta: observed -0.027000 against reported -0.026000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table1_delta_1b_crossing_pooled",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 1 panel B, row delta",
+        "consistent": true,
+        "detail": {
+          "comparator": 0.0106,
+          "gap": 3.2526065174565133e-19,
+          "recomputed_delta": -0.0008000000000000004,
+          "reference": 0.0098,
+          "reported_delta": -0.0008,
+          "table": "1B"
+        },
+        "expected": -0.0008,
+        "name": "table1_delta_1b_event_feasible",
+        "observed": -0.0008000000000000004,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 1 panel B, row delta: observed -0.000800 against reported -0.000800 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table1_delta_1b_event_feasible",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 1 panel B, row delta",
+        "consistent": true,
+        "detail": {
+          "comparator": 0.0096,
+          "gap": 7.589415207398531e-19,
+          "recomputed_delta": -0.0006999999999999992,
+          "reference": 0.0089,
+          "reported_delta": -0.0007,
+          "table": "1B"
+        },
+        "expected": -0.0007,
+        "name": "table1_delta_1b_event_pooled",
+        "observed": -0.0006999999999999992,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 1 panel B, row delta: observed -0.000700 against reported -0.000700 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table1_delta_1b_event_pooled",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 1 panel B, row delta",
+        "consistent": true,
+        "detail": {
+          "comparator": 7.24,
+          "gap": 3.3306690738754696e-16,
+          "recomputed_delta": -0.5700000000000003,
+          "reference": 6.67,
+          "reported_delta": -0.57,
+          "table": "1B"
+        },
+        "expected": -0.57,
+        "name": "table1_delta_1b_mean_interval_pooled",
+        "observed": -0.5700000000000003,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 1 panel B, row delta: observed -0.570000 against reported -0.570000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table1_delta_1b_mean_interval_pooled",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 1 panel B, literal bands",
+        "consistent": true,
+        "detail": {
+          "comparator": 0.0,
+          "gap": 0.0,
+          "recomputed_delta": 0.378,
+          "reference": 0.378,
+          "reported_delta": 0.378,
+          "table": "1B-literal"
+        },
+        "expected": 0.378,
+        "name": "table1_delta_1b-literal_escalate_fraction",
+        "observed": 0.378,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 1 panel B, literal bands: observed 0.378000 against reported 0.378000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table1_delta_1b-literal_escalate_fraction",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 1 panel B, literal bands",
+        "consistent": true,
+        "detail": {
+          "comparator": 0.3,
+          "gap": 5.551115123125783e-17,
+          "recomputed_delta": -0.27199999999999996,
+          "reference": 0.028,
+          "reported_delta": -0.272,
+          "table": "1B-literal"
+        },
+        "expected": -0.272,
+        "name": "table1_delta_1b-literal_crossing_feasible",
+        "observed": -0.27199999999999996,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 1 panel B, literal bands: observed -0.272000 against reported -0.272000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table1_delta_1b-literal_crossing_feasible",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 1 panel B, literal bands",
+        "consistent": true,
+        "detail": {
+          "comparator": 0.3,
+          "gap": 2.7755575615628914e-17,
+          "recomputed_delta": -0.13799999999999998,
+          "reference": 0.162,
+          "reported_delta": -0.138,
+          "table": "1B-literal"
+        },
+        "expected": -0.138,
+        "name": "table1_delta_1b-literal_crossing_pooled",
+        "observed": -0.13799999999999998,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 1 panel B, literal bands: observed -0.138000 against reported -0.138000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table1_delta_1b-literal_crossing_pooled",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 1 panel B, literal bands",
+        "consistent": true,
+        "detail": {
+          "comparator": 0.0118,
+          "gap": 0.0,
+          "recomputed_delta": -0.002,
+          "reference": 0.0098,
+          "reported_delta": -0.002,
+          "table": "1B-literal"
+        },
+        "expected": -0.002,
+        "name": "table1_delta_1b-literal_event_feasible",
+        "observed": -0.002,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 1 panel B, literal bands: observed -0.002000 against reported -0.002000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table1_delta_1b-literal_event_feasible",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 1 panel B, literal bands",
+        "consistent": true,
+        "detail": {
+          "comparator": 0.0118,
+          "gap": 0.0,
+          "recomputed_delta": -0.0029,
+          "reference": 0.0089,
+          "reported_delta": -0.0029,
+          "table": "1B-literal"
+        },
+        "expected": -0.0029,
+        "name": "table1_delta_1b-literal_event_pooled",
+        "observed": -0.0029,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 1 panel B, literal bands: observed -0.002900 against reported -0.002900 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table1_delta_1b-literal_event_pooled",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 1 panel B, literal bands",
+        "consistent": true,
+        "detail": {
+          "comparator": 7.86,
+          "gap": 4.440892098500626e-16,
+          "recomputed_delta": -1.1900000000000004,
+          "reference": 6.67,
+          "reported_delta": -1.19,
+          "table": "1B-literal"
+        },
+        "expected": -1.19,
+        "name": "table1_delta_1b-literal_mean_interval_pooled",
+        "observed": -1.1900000000000004,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 1 panel B, literal bands: observed -1.190000 against reported -1.190000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table1_delta_1b-literal_mean_interval_pooled",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 1 panel B, calibrated bands",
+        "consistent": true,
+        "detail": {
+          "comparator": 0.738,
+          "gap": 0.0010000000000000009,
+          "recomputed_delta": -0.36,
+          "reference": 0.378,
+          "reported_delta": -0.359,
+          "table": "1B-calibrated"
+        },
+        "expected": -0.359,
+        "name": "table1_delta_1b-calibrated_escalate_fraction",
+        "observed": -0.36,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 1 panel B, calibrated bands: observed -0.360000 against reported -0.359000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table1_delta_1b-calibrated_escalate_fraction",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 1 panel B, calibrated bands",
+        "consistent": true,
+        "detail": {
+          "comparator": 0.018,
+          "gap": 1.734723475976807e-18,
+          "recomputed_delta": 0.010000000000000002,
+          "reference": 0.028,
+          "reported_delta": 0.01,
+          "table": "1B-calibrated"
+        },
+        "expected": 0.01,
+        "name": "table1_delta_1b-calibrated_crossing_feasible",
+        "observed": 0.010000000000000002,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 1 panel B, calibrated bands: observed 0.010000 against reported 0.010000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table1_delta_1b-calibrated_crossing_feasible",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 1 panel B, calibrated bands",
+        "consistent": true,
+        "detail": {
+          "comparator": 0.155,
+          "gap": 6.071532165918825e-18,
+          "recomputed_delta": 0.007000000000000006,
+          "reference": 0.162,
+          "reported_delta": 0.007,
+          "table": "1B-calibrated"
+        },
+        "expected": 0.007,
+        "name": "table1_delta_1b-calibrated_crossing_pooled",
+        "observed": 0.007000000000000006,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 1 panel B, calibrated bands: observed 0.007000 against reported 0.007000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table1_delta_1b-calibrated_crossing_pooled",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 1 panel B, calibrated bands",
+        "consistent": true,
+        "detail": {
+          "comparator": 0.006,
+          "gap": 0.00010000000000000026,
+          "recomputed_delta": 0.0037999999999999996,
+          "reference": 0.0098,
+          "reported_delta": 0.0039,
+          "table": "1B-calibrated"
+        },
+        "expected": 0.0039,
+        "name": "table1_delta_1b-calibrated_event_feasible",
+        "observed": 0.0037999999999999996,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 1 panel B, calibrated bands: observed 0.003800 against reported 0.003900 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table1_delta_1b-calibrated_event_feasible",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 1 panel B, calibrated bands",
+        "consistent": true,
+        "detail": {
+          "comparator": 0.0069,
+          "gap": 0.0,
+          "recomputed_delta": 0.002,
+          "reference": 0.0089,
+          "reported_delta": 0.002,
+          "table": "1B-calibrated"
+        },
+        "expected": 0.002,
+        "name": "table1_delta_1b-calibrated_event_pooled",
+        "observed": 0.002,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 1 panel B, calibrated bands: observed 0.002000 against reported 0.002000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table1_delta_1b-calibrated_event_pooled",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 1 panel B, calibrated bands",
+        "consistent": true,
+        "detail": {
+          "comparator": 5.63,
+          "gap": 0.010000000000000009,
+          "recomputed_delta": 1.04,
+          "reference": 6.67,
+          "reported_delta": 1.05,
+          "table": "1B-calibrated"
+        },
+        "expected": 1.05,
+        "name": "table1_delta_1b-calibrated_mean_interval_pooled",
+        "observed": 1.04,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 1 panel B, calibrated bands: observed 1.040000 against reported 1.050000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table1_delta_1b-calibrated_mean_interval_pooled",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 1 caption (the eleven comparators of Tables 1 and 2)",
+        "consistent": true,
+        "detail": {
+          "from_tables": 11.0,
+          "stated": 11.0
+        },
+        "expected": 11.0,
+        "name": "table1_comparator_count",
+        "observed": 11.0,
+        "op": "eq",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 1 caption (the eleven comparators of Tables 1 and 2): observed 11.000000 against reported 11.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table1_comparator_count",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Results, two-barrier policy (75 events among 7,617 feasible intervals)",
+        "consistent": true,
+        "detail": {
+          "event_probability": 0.0098,
+          "feasible_intervals": 7617,
+          "product": 75.0
+        },
+        "expected": 75.0,
+        "name": "table1_feasible_event_count",
+        "observed": 75.0,
+        "op": "eq",
+        "tolerance": 1.0
+      },
+      "evidence": "Results, two-barrier policy (75 events among 7,617 feasible intervals): observed 75.000000 against reported 75.000000 (tolerance 1)",
+      "family": "manuscript",
+      "name": "table1_feasible_event_count",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 text (the five single-component losses sum to 0.024)",
+        "consistent": true,
+        "detail": {
+          "components": {
+            "diameter_only": -0.006,
+            "no_ultrasound": -0.001,
+            "scalar_noise": 0.011,
+            "single_barrier": -0.002,
+            "single_regime_mean_drift": 0.022
+          }
+        },
+        "expected": 0.024,
+        "name": "table2_five_component_sum",
+        "observed": 0.023999999999999997,
+        "op": "eq",
+        "tolerance": 1e-09
+      },
+      "evidence": "Table 2 text (the five single-component losses sum to 0.024): observed 0.024000 against reported 0.024000 (tolerance 1e-09)",
+      "family": "manuscript",
+      "name": "table2_five_component_sum",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 1 panel A and the Table 2 text (snapshot margin 0.141 on burden coverage)",
+        "consistent": true,
+        "detail": {
+          "definition": "Table 1 panel A, BM-STF minus snapshot on burden coverage",
+          "printed": 0.141
+        },
+        "expected": 0.141,
+        "name": "table2_snapshot_margin_recomputed",
+        "observed": 0.14,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 1 panel A and the Table 2 text (snapshot margin 0.141 on burden coverage): observed 0.140000 against reported 0.141000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_snapshot_margin_recomputed",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 text (the five single-component losses do not sum to the snapshot margin)",
+        "consistent": true,
+        "detail": {
+          "snapshot_margin": 0.141
+        },
+        "expected": 0.141,
+        "name": "table2_components_below_snapshot_margin",
+        "observed": 0.023999999999999997,
+        "op": "le",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 2 text (the five single-component losses do not sum to the snapshot margin): observed 0.024000 against reported 0.141000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table2_components_below_snapshot_margin",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for scalar_noise",
+        "consistent": true,
+        "detail": {
+          "comparator": "scalar_noise",
+          "metric": "cov_burden"
+        },
+        "expected": 0.011,
+        "name": "table2_delta_scalar_noise_cov_burden",
+        "observed": 0.01100000000000001,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for scalar_noise: observed 0.011000 against reported 0.011000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_scalar_noise_cov_burden",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for scalar_noise",
+        "consistent": true,
+        "detail": {
+          "comparator": "scalar_noise",
+          "metric": "cov_burden_hn"
+        },
+        "expected": 0.044,
+        "name": "table2_delta_scalar_noise_cov_burden_hn",
+        "observed": 0.04400000000000004,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for scalar_noise: observed 0.044000 against reported 0.044000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_scalar_noise_cov_burden_hn",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for scalar_noise",
+        "consistent": true,
+        "detail": {
+          "comparator": "scalar_noise",
+          "metric": "rmse_change"
+        },
+        "expected": -0.009,
+        "name": "table2_delta_scalar_noise_rmse_change",
+        "observed": -0.009000000000000008,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for scalar_noise: observed -0.009000 against reported -0.009000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_scalar_noise_rmse_change",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for scalar_noise",
+        "consistent": true,
+        "detail": {
+          "comparator": "scalar_noise",
+          "metric": "crps_diameter"
+        },
+        "expected": -0.001,
+        "name": "table2_delta_scalar_noise_crps_diameter",
+        "observed": 0.0,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for scalar_noise: observed 0.000000 against reported -0.001000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_scalar_noise_crps_diameter",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for scalar_noise",
+        "consistent": true,
+        "detail": {
+          "comparator": "scalar_noise",
+          "metric": "auroc"
+        },
+        "expected": 0.001,
+        "name": "table2_delta_scalar_noise_auroc",
+        "observed": 0.0010000000000000009,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for scalar_noise: observed 0.001000 against reported 0.001000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_scalar_noise_auroc",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for no_ultrasound",
+        "consistent": true,
+        "detail": {
+          "comparator": "no_ultrasound",
+          "metric": "cov_burden"
+        },
+        "expected": -0.001,
+        "name": "table2_delta_no_ultrasound_cov_burden",
+        "observed": -0.0020000000000000018,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for no_ultrasound: observed -0.002000 against reported -0.001000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_no_ultrasound_cov_burden",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for no_ultrasound",
+        "consistent": true,
+        "detail": {
+          "comparator": "no_ultrasound",
+          "metric": "cov_burden_hn"
+        },
+        "expected": 0.001,
+        "name": "table2_delta_no_ultrasound_cov_burden_hn",
+        "observed": 0.0010000000000000009,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for no_ultrasound: observed 0.001000 against reported 0.001000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_no_ultrasound_cov_burden_hn",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for no_ultrasound",
+        "consistent": true,
+        "detail": {
+          "comparator": "no_ultrasound",
+          "metric": "rmse_change"
+        },
+        "expected": -0.001,
+        "name": "table2_delta_no_ultrasound_rmse_change",
+        "observed": -0.0010000000000000009,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for no_ultrasound: observed -0.001000 against reported -0.001000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_no_ultrasound_rmse_change",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for no_ultrasound",
+        "consistent": true,
+        "detail": {
+          "comparator": "no_ultrasound",
+          "metric": "crps_diameter"
+        },
+        "expected": -0.008,
+        "name": "table2_delta_no_ultrasound_crps_diameter",
+        "observed": -0.008000000000000007,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for no_ultrasound: observed -0.008000 against reported -0.008000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_no_ultrasound_crps_diameter",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for no_ultrasound",
+        "consistent": true,
+        "detail": {
+          "comparator": "no_ultrasound",
+          "metric": "auroc"
+        },
+        "expected": 0.0,
+        "name": "table2_delta_no_ultrasound_auroc",
+        "observed": 0.0010000000000000009,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for no_ultrasound: observed 0.001000 against reported 0.000000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_no_ultrasound_auroc",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for single_regime_mean_drift",
+        "consistent": true,
+        "detail": {
+          "comparator": "single_regime_mean_drift",
+          "metric": "cov_burden"
+        },
+        "expected": 0.022,
+        "name": "table2_delta_single_regime_mean_drift_cov_burden",
+        "observed": 0.02100000000000002,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for single_regime_mean_drift: observed 0.021000 against reported 0.022000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_single_regime_mean_drift_cov_burden",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for single_regime_mean_drift",
+        "consistent": true,
+        "detail": {
+          "comparator": "single_regime_mean_drift",
+          "metric": "cov_burden_hn"
+        },
+        "expected": 0.025,
+        "name": "table2_delta_single_regime_mean_drift_cov_burden_hn",
+        "observed": 0.025000000000000022,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for single_regime_mean_drift: observed 0.025000 against reported 0.025000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_single_regime_mean_drift_cov_burden_hn",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for single_regime_mean_drift",
+        "consistent": true,
+        "detail": {
+          "comparator": "single_regime_mean_drift",
+          "metric": "rmse_change"
+        },
+        "expected": -0.001,
+        "name": "table2_delta_single_regime_mean_drift_rmse_change",
+        "observed": -0.0010000000000000009,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for single_regime_mean_drift: observed -0.001000 against reported -0.001000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_single_regime_mean_drift_rmse_change",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for single_regime_mean_drift",
+        "consistent": true,
+        "detail": {
+          "comparator": "single_regime_mean_drift",
+          "metric": "crps_diameter"
+        },
+        "expected": 0.048,
+        "name": "table2_delta_single_regime_mean_drift_crps_diameter",
+        "observed": 0.04799999999999993,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for single_regime_mean_drift: observed 0.048000 against reported 0.048000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_single_regime_mean_drift_crps_diameter",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for single_regime_mean_drift",
+        "consistent": true,
+        "detail": {
+          "comparator": "single_regime_mean_drift",
+          "metric": "auroc"
+        },
+        "expected": 0.006,
+        "name": "table2_delta_single_regime_mean_drift_auroc",
+        "observed": 0.006000000000000005,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for single_regime_mean_drift: observed 0.006000 against reported 0.006000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_single_regime_mean_drift_auroc",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for single_regime_quiescent",
+        "consistent": true,
+        "detail": {
+          "comparator": "single_regime_quiescent",
+          "metric": "cov_burden"
+        },
+        "expected": 0.012,
+        "name": "table2_delta_single_regime_quiescent_cov_burden",
+        "observed": 0.01200000000000001,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for single_regime_quiescent: observed 0.012000 against reported 0.012000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_single_regime_quiescent_cov_burden",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for single_regime_quiescent",
+        "consistent": true,
+        "detail": {
+          "comparator": "single_regime_quiescent",
+          "metric": "cov_burden_hn"
+        },
+        "expected": 0.003,
+        "name": "table2_delta_single_regime_quiescent_cov_burden_hn",
+        "observed": 0.0030000000000000027,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for single_regime_quiescent: observed 0.003000 against reported 0.003000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_single_regime_quiescent_cov_burden_hn",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for single_regime_quiescent",
+        "consistent": true,
+        "detail": {
+          "comparator": "single_regime_quiescent",
+          "metric": "rmse_change"
+        },
+        "expected": -0.003,
+        "name": "table2_delta_single_regime_quiescent_rmse_change",
+        "observed": -0.0030000000000000027,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for single_regime_quiescent: observed -0.003000 against reported -0.003000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_single_regime_quiescent_rmse_change",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for single_regime_quiescent",
+        "consistent": true,
+        "detail": {
+          "comparator": "single_regime_quiescent",
+          "metric": "crps_diameter"
+        },
+        "expected": 0.027,
+        "name": "table2_delta_single_regime_quiescent_crps_diameter",
+        "observed": 0.026999999999999913,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for single_regime_quiescent: observed 0.027000 against reported 0.027000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_single_regime_quiescent_crps_diameter",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for single_regime_quiescent",
+        "consistent": true,
+        "detail": {
+          "comparator": "single_regime_quiescent",
+          "metric": "auroc"
+        },
+        "expected": 0.007,
+        "name": "table2_delta_single_regime_quiescent_auroc",
+        "observed": 0.007000000000000006,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for single_regime_quiescent: observed 0.007000 against reported 0.007000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_single_regime_quiescent_auroc",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for single_barrier",
+        "consistent": true,
+        "detail": {
+          "comparator": "single_barrier",
+          "metric": "cov_burden"
+        },
+        "expected": -0.002,
+        "name": "table2_delta_single_barrier_cov_burden",
+        "observed": -0.0020000000000000018,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for single_barrier: observed -0.002000 against reported -0.002000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_single_barrier_cov_burden",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for single_barrier",
+        "consistent": true,
+        "detail": {
+          "comparator": "single_barrier",
+          "metric": "cov_burden_hn"
+        },
+        "expected": 0.002,
+        "name": "table2_delta_single_barrier_cov_burden_hn",
+        "observed": 0.0020000000000000018,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for single_barrier: observed 0.002000 against reported 0.002000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_single_barrier_cov_burden_hn",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for single_barrier",
+        "consistent": true,
+        "detail": {
+          "comparator": "single_barrier",
+          "metric": "rmse_change"
+        },
+        "expected": 0.0,
+        "name": "table2_delta_single_barrier_rmse_change",
+        "observed": 0.0,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for single_barrier: observed 0.000000 against reported 0.000000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_single_barrier_rmse_change",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for single_barrier",
+        "consistent": true,
+        "detail": {
+          "comparator": "single_barrier",
+          "metric": "crps_diameter"
+        },
+        "expected": -0.001,
+        "name": "table2_delta_single_barrier_crps_diameter",
+        "observed": -0.0010000000000000009,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for single_barrier: observed -0.001000 against reported -0.001000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_single_barrier_crps_diameter",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for single_barrier",
+        "consistent": true,
+        "detail": {
+          "comparator": "single_barrier",
+          "metric": "auroc"
+        },
+        "expected": 0.0,
+        "name": "table2_delta_single_barrier_auroc",
+        "observed": 0.0,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for single_barrier: observed 0.000000 against reported 0.000000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_single_barrier_auroc",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for diameter_only",
+        "consistent": true,
+        "detail": {
+          "comparator": "diameter_only",
+          "metric": "cov_burden"
+        },
+        "expected": -0.006,
+        "name": "table2_delta_diameter_only_cov_burden",
+        "observed": -0.006000000000000005,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for diameter_only: observed -0.006000 against reported -0.006000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_diameter_only_cov_burden",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for diameter_only",
+        "consistent": true,
+        "detail": {
+          "comparator": "diameter_only",
+          "metric": "cov_burden_hn"
+        },
+        "expected": 0.007,
+        "name": "table2_delta_diameter_only_cov_burden_hn",
+        "observed": 0.007000000000000006,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for diameter_only: observed 0.007000 against reported 0.007000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_diameter_only_cov_burden_hn",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for diameter_only",
+        "consistent": true,
+        "detail": {
+          "comparator": "diameter_only",
+          "metric": "rmse_change"
+        },
+        "expected": -0.05,
+        "name": "table2_delta_diameter_only_rmse_change",
+        "observed": -0.04999999999999999,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for diameter_only: observed -0.050000 against reported -0.050000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_diameter_only_rmse_change",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for diameter_only",
+        "consistent": true,
+        "detail": {
+          "comparator": "diameter_only",
+          "metric": "crps_diameter"
+        },
+        "expected": -0.022,
+        "name": "table2_delta_diameter_only_crps_diameter",
+        "observed": -0.02200000000000002,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for diameter_only: observed -0.022000 against reported -0.022000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_diameter_only_crps_diameter",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for diameter_only",
+        "consistent": true,
+        "detail": {
+          "comparator": "diameter_only",
+          "metric": "auroc"
+        },
+        "expected": 0.004,
+        "name": "table2_delta_diameter_only_auroc",
+        "observed": 0.0050000000000000044,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for diameter_only: observed 0.005000 against reported 0.004000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_diameter_only_auroc",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for spread_half",
+        "consistent": true,
+        "detail": {
+          "comparator": "spread_half",
+          "metric": "cov_burden"
+        },
+        "expected": 0.276,
+        "name": "table2_delta_spread_half_cov_burden",
+        "observed": 0.276,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for spread_half: observed 0.276000 against reported 0.276000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_spread_half_cov_burden",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for spread_half",
+        "consistent": true,
+        "detail": {
+          "comparator": "spread_half",
+          "metric": "cov_burden_hn"
+        },
+        "expected": 0.301,
+        "name": "table2_delta_spread_half_cov_burden_hn",
+        "observed": 0.30100000000000005,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for spread_half: observed 0.301000 against reported 0.301000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_spread_half_cov_burden_hn",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for spread_half",
+        "consistent": true,
+        "detail": {
+          "comparator": "spread_half",
+          "metric": "rmse_change"
+        },
+        "expected": 0.0,
+        "name": "table2_delta_spread_half_rmse_change",
+        "observed": 0.0,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for spread_half: observed 0.000000 against reported 0.000000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_spread_half_rmse_change",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for spread_half",
+        "consistent": true,
+        "detail": {
+          "comparator": "spread_half",
+          "metric": "crps_diameter"
+        },
+        "expected": -0.034,
+        "name": "table2_delta_spread_half_crps_diameter",
+        "observed": -0.03400000000000003,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for spread_half: observed -0.034000 against reported -0.034000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_spread_half_crps_diameter",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for spread_half",
+        "consistent": true,
+        "detail": {
+          "comparator": "spread_half",
+          "metric": "auroc"
+        },
+        "expected": 0.002,
+        "name": "table2_delta_spread_half_auroc",
+        "observed": 0.0020000000000000018,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for spread_half: observed 0.002000 against reported 0.002000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_spread_half_auroc",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for spread_double",
+        "consistent": true,
+        "detail": {
+          "comparator": "spread_double",
+          "metric": "cov_burden"
+        },
+        "expected": -0.097,
+        "name": "table2_delta_spread_double_cov_burden",
+        "observed": -0.09699999999999998,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for spread_double: observed -0.097000 against reported -0.097000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_spread_double_cov_burden",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for spread_double",
+        "consistent": true,
+        "detail": {
+          "comparator": "spread_double",
+          "metric": "cov_burden_hn"
+        },
+        "expected": -0.088,
+        "name": "table2_delta_spread_double_cov_burden_hn",
+        "observed": -0.08799999999999997,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for spread_double: observed -0.088000 against reported -0.088000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_spread_double_cov_burden_hn",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for spread_double",
+        "consistent": true,
+        "detail": {
+          "comparator": "spread_double",
+          "metric": "rmse_change"
+        },
+        "expected": 0.0,
+        "name": "table2_delta_spread_double_rmse_change",
+        "observed": 0.0,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for spread_double: observed 0.000000 against reported 0.000000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_spread_double_rmse_change",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for spread_double",
+        "consistent": true,
+        "detail": {
+          "comparator": "spread_double",
+          "metric": "crps_diameter"
+        },
+        "expected": -0.101,
+        "name": "table2_delta_spread_double_crps_diameter",
+        "observed": -0.10099999999999998,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for spread_double: observed -0.101000 against reported -0.101000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_spread_double_crps_diameter",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 2 panel A, row delta for spread_double",
+        "consistent": true,
+        "detail": {
+          "comparator": "spread_double",
+          "metric": "auroc"
+        },
+        "expected": 0.0,
+        "name": "table2_delta_spread_double_auroc",
+        "observed": 0.0010000000000000009,
+        "op": "eq",
+        "tolerance": 0.0101
+      },
+      "evidence": "Table 2 panel A, row delta for spread_double: observed 0.001000 against reported 0.000000 (tolerance 0.0101)",
+      "family": "manuscript",
+      "name": "table2_delta_spread_double_auroc",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 3 panel A (the pooled interval never exceeds the feasible-stratum interval)",
+        "consistent": true,
+        "detail": {
+          "interval_feasible": 9.19
+        },
+        "expected": 9.19,
+        "name": "table3_interval_pooled_le_feasible_0.05",
+        "observed": 6.48,
+        "op": "le",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 3 panel A (the pooled interval never exceeds the feasible-stratum interval): observed 6.480000 against reported 9.190000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table3_interval_pooled_le_feasible_0.05",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 3 panel A (tolerance sweep, crossing probability rises with alpha_1)",
+        "consistent": true,
+        "detail": {
+          "direction": "non-decreasing",
+          "from": 0.015,
+          "to": 0.028
+        },
+        "expected": 0.0,
+        "name": "table3_crossing_increases_with_alpha1_0.1",
+        "observed": 0.013000000000000001,
+        "op": "ge",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 3 panel A (tolerance sweep, crossing probability rises with alpha_1): observed 0.013000 against reported 0.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table3_crossing_increases_with_alpha1_0.1",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 3 panel A (the pooled interval never exceeds the feasible-stratum interval)",
+        "consistent": true,
+        "detail": {
+          "interval_feasible": 8.9
+        },
+        "expected": 8.9,
+        "name": "table3_interval_pooled_le_feasible_0.1",
+        "observed": 6.67,
+        "op": "le",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 3 panel A (the pooled interval never exceeds the feasible-stratum interval): observed 6.670000 against reported 8.900000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table3_interval_pooled_le_feasible_0.1",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 3 panel A (tolerance sweep, crossing probability rises with alpha_1)",
+        "consistent": true,
+        "detail": {
+          "direction": "non-decreasing",
+          "from": 0.028,
+          "to": 0.039
+        },
+        "expected": 0.0,
+        "name": "table3_crossing_increases_with_alpha1_0.15",
+        "observed": 0.011,
+        "op": "ge",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 3 panel A (tolerance sweep, crossing probability rises with alpha_1): observed 0.011000 against reported 0.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table3_crossing_increases_with_alpha1_0.15",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 3 panel A (the pooled interval never exceeds the feasible-stratum interval)",
+        "consistent": true,
+        "detail": {
+          "interval_feasible": 8.72
+        },
+        "expected": 8.72,
+        "name": "table3_interval_pooled_le_feasible_0.15",
+        "observed": 6.78,
+        "op": "le",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 3 panel A (the pooled interval never exceeds the feasible-stratum interval): observed 6.780000 against reported 8.720000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table3_interval_pooled_le_feasible_0.15",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 3 panel A (tolerance sweep, crossing probability rises with alpha_1)",
+        "consistent": true,
+        "detail": {
+          "direction": "non-decreasing",
+          "from": 0.039,
+          "to": 0.049
+        },
+        "expected": 0.0,
+        "name": "table3_crossing_increases_with_alpha1_0.2",
+        "observed": 0.010000000000000002,
+        "op": "ge",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 3 panel A (tolerance sweep, crossing probability rises with alpha_1): observed 0.010000 against reported 0.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table3_crossing_increases_with_alpha1_0.2",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 3 panel A (the pooled interval never exceeds the feasible-stratum interval)",
+        "consistent": true,
+        "detail": {
+          "interval_feasible": 8.57
+        },
+        "expected": 8.57,
+        "name": "table3_interval_pooled_le_feasible_0.2",
+        "observed": 6.86,
+        "op": "le",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 3 panel A (the pooled interval never exceeds the feasible-stratum interval): observed 6.860000 against reported 8.570000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table3_interval_pooled_le_feasible_0.2",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 3 panel A at alpha_1 = 0.10 against Table 1 panel B",
+        "consistent": true,
+        "detail": {
+          "escalate": 0.378,
+          "table1_escalate": 0.378
+        },
+        "expected": 0.028,
+        "name": "table3_base_matches_table1",
+        "observed": 0.028,
+        "op": "eq",
+        "tolerance": 1e-09
+      },
+      "evidence": "Table 3 panel A at alpha_1 = 0.10 against Table 1 panel B: observed 0.028000 against reported 0.028000 (tolerance 1e-09)",
+      "family": "manuscript",
+      "name": "table3_base_matches_table1",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 4 (the retrospective column is the sum of Sites A, B and C)",
+        "consistent": true,
+        "detail": {
+          "field": "screened",
+          "pooled": 13233
+        },
+        "expected": 13233.0,
+        "name": "table4_pooled_matches_site_sum_screened",
+        "observed": 13233.0,
+        "op": "eq",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 4 (the retrospective column is the sum of Sites A, B and C): observed 13233.000000 against reported 13233.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table4_pooled_matches_site_sum_screened",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 4 (the retrospective column is the sum of Sites A, B and C)",
+        "consistent": true,
+        "detail": {
+          "field": "excluded_prior_repair",
+          "pooled": 2179
+        },
+        "expected": 2179.0,
+        "name": "table4_pooled_matches_site_sum_excluded_prior_repair",
+        "observed": 2179.0,
+        "op": "eq",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 4 (the retrospective column is the sum of Sites A, B and C): observed 2179.000000 against reported 2179.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table4_pooled_matches_site_sum_excluded_prior_repair",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 4 (the retrospective column is the sum of Sites A, B and C)",
+        "consistent": true,
+        "detail": {
+          "field": "excluded_suprarenal",
+          "pooled": 681
+        },
+        "expected": 681.0,
+        "name": "table4_pooled_matches_site_sum_excluded_suprarenal",
+        "observed": 681.0,
+        "op": "eq",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 4 (the retrospective column is the sum of Sites A, B and C): observed 681.000000 against reported 681.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table4_pooled_matches_site_sum_excluded_suprarenal",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 4 (the retrospective column is the sum of Sites A, B and C)",
+        "consistent": true,
+        "detail": {
+          "field": "excluded_symptomatic",
+          "pooled": 1171
+        },
+        "expected": 1171.0,
+        "name": "table4_pooled_matches_site_sum_excluded_symptomatic",
+        "observed": 1171.0,
+        "op": "eq",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 4 (the retrospective column is the sum of Sites A, B and C): observed 1171.000000 against reported 1171.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table4_pooled_matches_site_sum_excluded_symptomatic",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 4 (the retrospective column is the sum of Sites A, B and C)",
+        "consistent": true,
+        "detail": {
+          "field": "excluded_non_diagnostic",
+          "pooled": 374
+        },
+        "expected": 374.0,
+        "name": "table4_pooled_matches_site_sum_excluded_non_diagnostic",
+        "observed": 374.0,
+        "op": "eq",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 4 (the retrospective column is the sum of Sites A, B and C): observed 374.000000 against reported 374.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table4_pooled_matches_site_sum_excluded_non_diagnostic",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 4 (the retrospective column is the sum of Sites A, B and C)",
+        "consistent": true,
+        "detail": {
+          "field": "single_observation",
+          "pooled": 4560
+        },
+        "expected": 4560.0,
+        "name": "table4_pooled_matches_site_sum_single_observation",
+        "observed": 4560.0,
+        "op": "eq",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 4 (the retrospective column is the sum of Sites A, B and C): observed 4560.000000 against reported 4560.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table4_pooled_matches_site_sum_single_observation",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 4 (the retrospective column is the sum of Sites A, B and C)",
+        "consistent": true,
+        "detail": {
+          "field": "at_or_above_threshold",
+          "pooled": 2610
+        },
+        "expected": 2610.0,
+        "name": "table4_pooled_matches_site_sum_at_or_above_threshold",
+        "observed": 2610.0,
+        "op": "eq",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 4 (the retrospective column is the sum of Sites A, B and C): observed 2610.000000 against reported 2610.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table4_pooled_matches_site_sum_at_or_above_threshold",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 4 (the retrospective column is the sum of Sites A, B and C)",
+        "consistent": true,
+        "detail": {
+          "field": "two_or_more_observations",
+          "pooled": 4268
+        },
+        "expected": 4268.0,
+        "name": "table4_pooled_matches_site_sum_two_or_more_observations",
+        "observed": 4268.0,
+        "op": "eq",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 4 (the retrospective column is the sum of Sites A, B and C): observed 4268.000000 against reported 4268.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table4_pooled_matches_site_sum_two_or_more_observations",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 4 (the retrospective column is the sum of Sites A, B and C)",
+        "consistent": true,
+        "detail": {
+          "field": "ct_examinations",
+          "pooled": 16769
+        },
+        "expected": 16769.0,
+        "name": "table4_pooled_matches_site_sum_ct_examinations",
+        "observed": 16769.0,
+        "op": "eq",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 4 (the retrospective column is the sum of Sites A, B and C): observed 16769.000000 against reported 16769.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table4_pooled_matches_site_sum_ct_examinations",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 4 (the retrospective column is the sum of Sites A, B and C)",
+        "consistent": true,
+        "detail": {
+          "field": "us_observations",
+          "pooled": 20555
+        },
+        "expected": 20555.0,
+        "name": "table4_pooled_matches_site_sum_us_observations",
+        "observed": 20555.0,
+        "op": "eq",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 4 (the retrospective column is the sum of Sites A, B and C): observed 20555.000000 against reported 20555.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table4_pooled_matches_site_sum_us_observations",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 4 (the retrospective column is the sum of Sites A, B and C)",
+        "consistent": true,
+        "detail": {
+          "field": "paired_within_three_months",
+          "pooled": 3314
+        },
+        "expected": 3314.0,
+        "name": "table4_pooled_matches_site_sum_paired_within_three_months",
+        "observed": 3314.0,
+        "op": "eq",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 4 (the retrospective column is the sum of Sites A, B and C): observed 3314.000000 against reported 3314.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table4_pooled_matches_site_sum_paired_within_three_months",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 4 (the retrospective column is the sum of Sites A, B and C)",
+        "consistent": true,
+        "detail": {
+          "field": "audit_stratum_pairs",
+          "pooled": 483
+        },
+        "expected": 483.0,
+        "name": "table4_pooled_matches_site_sum_audit_stratum_pairs",
+        "observed": 483.0,
+        "op": "eq",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 4 (the retrospective column is the sum of Sites A, B and C): observed 483.000000 against reported 483.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table4_pooled_matches_site_sum_audit_stratum_pairs",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 4 (single-observation stratum plus at-least-two-observation records equals retained)",
+        "consistent": true,
+        "detail": {
+          "excluded": 1652,
+          "screened": 5018,
+          "single": 1898,
+          "two_or_more": 1468
+        },
+        "expected": 3366.0,
+        "name": "table4_retained_split_Site A (I)",
+        "observed": 3366.0,
+        "op": "eq",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 4 (single-observation stratum plus at-least-two-observation records equals retained): observed 3366.000000 against reported 3366.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table4_retained_split_Site A (I)",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 4 (single-observation stratum plus at-least-two-observation records equals retained)",
+        "consistent": true,
+        "detail": {
+          "excluded": 1432,
+          "screened": 4247,
+          "single": 1474,
+          "two_or_more": 1341
+        },
+        "expected": 2815.0,
+        "name": "table4_retained_split_Site B (I)",
+        "observed": 2815.0,
+        "op": "eq",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 4 (single-observation stratum plus at-least-two-observation records equals retained): observed 2815.000000 against reported 2815.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table4_retained_split_Site B (I)",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 4 (single-observation stratum plus at-least-two-observation records equals retained)",
+        "consistent": true,
+        "detail": {
+          "excluded": 1321,
+          "screened": 3968,
+          "single": 1188,
+          "two_or_more": 1459
+        },
+        "expected": 2647.0,
+        "name": "table4_retained_split_Site C (II)",
+        "observed": 2647.0,
+        "op": "eq",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 4 (single-observation stratum plus at-least-two-observation records equals retained): observed 2647.000000 against reported 2647.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table4_retained_split_Site C (II)",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 4 (single-observation stratum plus at-least-two-observation records equals retained)",
+        "consistent": true,
+        "detail": {
+          "excluded": 4405,
+          "screened": 13233,
+          "single": 4560,
+          "two_or_more": 4268
+        },
+        "expected": 8828.0,
+        "name": "table4_retained_split_Retrospective cohort",
+        "observed": 8828.0,
+        "op": "eq",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 4 (single-observation stratum plus at-least-two-observation records equals retained): observed 8828.000000 against reported 8828.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table4_retained_split_Retrospective cohort",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 4 (outcomes at 24 months, pooled against the site sum)",
+        "consistent": false,
+        "detail": {
+          "outcome": "composite_event",
+          "pooled": 1026,
+          "site_sum": 948
+        },
+        "expected": 1026.0,
+        "name": "table4_outcome_pooled_matches_site_sum_composite_event",
+        "observed": 948.0,
+        "op": "eq",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 4 (outcomes at 24 months, pooled against the site sum): observed 948.000000 against reported 1026.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table4_outcome_pooled_matches_site_sum_composite_event",
+      "status": "FAIL"
+    },
+    {
+      "detail": {
+        "anchor": "Table 4 (outcomes at 24 months, pooled against the site sum)",
+        "consistent": false,
+        "detail": {
+          "outcome": "crossing",
+          "pooled": 764,
+          "site_sum": 708
+        },
+        "expected": 764.0,
+        "name": "table4_outcome_pooled_matches_site_sum_crossing",
+        "observed": 708.0,
+        "op": "eq",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 4 (outcomes at 24 months, pooled against the site sum): observed 708.000000 against reported 764.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table4_outcome_pooled_matches_site_sum_crossing",
+      "status": "FAIL"
+    },
+    {
+      "detail": {
+        "anchor": "Table 4 (outcomes at 24 months, pooled against the site sum)",
+        "consistent": false,
+        "detail": {
+          "outcome": "rapid_expansion",
+          "pooled": 404,
+          "site_sum": 386
+        },
+        "expected": 404.0,
+        "name": "table4_outcome_pooled_matches_site_sum_rapid_expansion",
+        "observed": 386.0,
+        "op": "eq",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 4 (outcomes at 24 months, pooled against the site sum): observed 386.000000 against reported 404.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table4_outcome_pooled_matches_site_sum_rapid_expansion",
+      "status": "FAIL"
+    },
+    {
+      "detail": {
+        "anchor": "Table 4 (outcomes at 24 months, pooled against the site sum)",
+        "consistent": false,
+        "detail": {
+          "outcome": "rupture_symptomatic",
+          "pooled": 86,
+          "site_sum": 82
+        },
+        "expected": 86.0,
+        "name": "table4_outcome_pooled_matches_site_sum_rupture_symptomatic",
+        "observed": 82.0,
+        "op": "eq",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 4 (outcomes at 24 months, pooled against the site sum): observed 82.000000 against reported 86.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table4_outcome_pooled_matches_site_sum_rupture_symptomatic",
+      "status": "FAIL"
+    },
+    {
+      "detail": {
+        "anchor": "Table 4 (outcomes at 24 months, pooled against the site sum)",
+        "consistent": false,
+        "detail": {
+          "outcome": "elective_repair",
+          "pooled": 1268,
+          "site_sum": 1202
+        },
+        "expected": 1268.0,
+        "name": "table4_outcome_pooled_matches_site_sum_elective_repair",
+        "observed": 1202.0,
+        "op": "eq",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 4 (outcomes at 24 months, pooled against the site sum): observed 1202.000000 against reported 1268.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table4_outcome_pooled_matches_site_sum_elective_repair",
+      "status": "FAIL"
+    },
+    {
+      "detail": {
+        "anchor": "Table 4 (silent-mode arm: single-observation plus at-least-two-observation records equals retained)",
+        "consistent": false,
+        "detail": {
+          "excluded": 809,
+          "screened": 2416
+        },
+        "expected": 1607.0,
+        "name": "table4_silent_arm_split",
+        "observed": 2098.0,
+        "op": "eq",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 4 (silent-mode arm: single-observation plus at-least-two-observation records equals retained): observed 2098.000000 against reported 1607.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table4_silent_arm_split",
+      "status": "FAIL"
+    },
+    {
+      "detail": {
+        "anchor": "Table 4 (CFD-labelled audit stratum, target 600-700 pairs)",
+        "consistent": false,
+        "detail": {
+          "achieved": 483,
+          "target": [
+            600,
+            700
+          ]
+        },
+        "expected": 600.0,
+        "name": "table4_audit_stratum_reaches_target",
+        "observed": 483.0,
+        "op": "ge",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 4 (CFD-labelled audit stratum, target 600-700 pairs): observed 483.000000 against reported 600.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table4_audit_stratum_reaches_target",
+      "status": "FAIL"
+    },
+    {
+      "detail": {
+        "anchor": "Table 4 (the pooled 24.0 % composite-event rate uses the 4,268 replayed records)",
+        "consistent": true,
+        "detail": {
+          "denominator": 4268,
+          "numerator": 1026
+        },
+        "expected": 24.0,
+        "name": "table4_composite_rate_consistency",
+        "observed": 24.0,
+        "op": "eq",
+        "tolerance": 0.05
+      },
+      "evidence": "Table 4 (the pooled 24.0 % composite-event rate uses the 4,268 replayed records): observed 24.000000 against reported 24.000000 (tolerance 0.05)",
+      "family": "manuscript",
+      "name": "table4_composite_rate_consistency",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Eq. (6) and the clinical-protocol criteria (audit-stratum margin of at least 0.03)",
+        "consistent": false,
+        "detail": {
+          "bm_stf": 0.96,
+          "comparator": "geometry_only_trajectory",
+          "comparator_value": 0.95
+        },
+        "expected": 0.03,
+        "name": "table5_audit_margin_geometry_only_trajectory",
+        "observed": 0.010000000000000009,
+        "op": "ge",
+        "tolerance": 0.0
+      },
+      "evidence": "Eq. (6) and the clinical-protocol criteria (audit-stratum margin of at least 0.03): observed 0.010000 against reported 0.030000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table5_audit_margin_geometry_only_trajectory",
+      "status": "FAIL"
+    },
+    {
+      "detail": {
+        "anchor": "Eq. (6) and the clinical-protocol criteria (audit-stratum margin of at least 0.03)",
+        "consistent": false,
+        "detail": {
+          "bm_stf": 0.96,
+          "comparator": "constant_g_null",
+          "comparator_value": 0.95
+        },
+        "expected": 0.03,
+        "name": "table5_audit_margin_constant_g_null",
+        "observed": 0.010000000000000009,
+        "op": "ge",
+        "tolerance": 0.0
+      },
+      "evidence": "Eq. (6) and the clinical-protocol criteria (audit-stratum margin of at least 0.03): observed 0.010000 against reported 0.030000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table5_audit_margin_constant_g_null",
+      "status": "FAIL"
+    },
+    {
+      "detail": {
+        "anchor": "Clinical-protocol criteria (at least 0.04 over the single-scan fusion on the external region)",
+        "consistent": true,
+        "detail": {
+          "bm_stf": 0.846,
+          "comparator": 0.757
+        },
+        "expected": 0.04,
+        "name": "table5_secondary_margin_single_scan_fusion",
+        "observed": 0.08899999999999997,
+        "op": "ge",
+        "tolerance": 0.0
+      },
+      "evidence": "Clinical-protocol criteria (at least 0.04 over the single-scan fusion on the external region): observed 0.089000 against reported 0.040000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table5_secondary_margin_single_scan_fusion",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Clinical-protocol criteria (parity with the equal-budget fusion, descriptive +/-0.02 band)",
+        "consistent": true,
+        "detail": {
+          "note": "the descriptive band is a reporting band, not a hard cutoff; the equivalence test is on the interval",
+          "point_difference": 0.0039999999999998925
+        },
+        "expected": 0.02,
+        "name": "table5_utility_parity_band",
+        "observed": 0.0039999999999998925,
+        "op": "le",
+        "tolerance": 0.0
+      },
+      "evidence": "Clinical-protocol criteria (parity with the equal-budget fusion, descriptive +/-0.02 band): observed 0.004000 against reported 0.020000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table5_utility_parity_band",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Table 5 panel B (substrate error within 10 % of the re-trained comparators)",
+        "consistent": true,
+        "detail": {
+          "lower_is_better": true
+        },
+        "expected": 0.1,
+        "name": "table5_substrate_parity_within_tolerance",
+        "observed": 0.001234567901234569,
+        "op": "le",
+        "tolerance": 1e-09
+      },
+      "evidence": "Table 5 panel B (substrate error within 10 % of the re-trained comparators): observed 0.001235 against reported 0.100000 (tolerance 1e-09)",
+      "family": "manuscript",
+      "name": "table5_substrate_parity_within_tolerance",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Code availability (the two reported SHA-256 digests)",
+        "consistent": true,
+        "detail": {
+          "mismatched": []
+        },
+        "expected": 0.0,
+        "name": "reported_script_hashes_are_sha256",
+        "observed": 0.0,
+        "op": "eq",
+        "tolerance": 0.0
+      },
+      "evidence": "Code availability (the two reported SHA-256 digests): observed 0.000000 against reported 0.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "reported_script_hashes_are_sha256",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "anchor": "Eq. (1) and the protocol criteria (alpha_2 = 0.01 is the RESCAN-scale level)",
+        "consistent": true,
+        "detail": {
+          "alpha1": 0.1,
+          "bound_level": 1.645
+        },
+        "expected": 0.01,
+        "name": "event_barrier_sits_inside_the_gate",
+        "observed": 0.01,
+        "op": "eq",
+        "tolerance": 0.0
+      },
+      "evidence": "Eq. (1) and the protocol criteria (alpha_2 = 0.01 is the RESCAN-scale level): observed 0.010000 against reported 0.010000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "event_barrier_sits_inside_the_gate",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "mismatched": []
+      },
+      "evidence": "the two SHA-256 digests in Code availability are transcribed with the reported analysis environment (Python 3.9.6, NumPy 2.0.2) and the reported run command 75 events among 7617 feasible intervals",
+      "family": "manuscript",
+      "name": "reported_script_digests_recorded",
+      "status": "PASS"
+    },
+    {
+      "detail": {},
+      "evidence": "the resource landing pages were fetched when dataset_urls.txt was assembled, and this run did not re-probe them: reachability is opt-in with --live so the shipped report stays a function of the repository and not of the network",
+      "family": "data",
+      "name": "public_dataset_links",
+      "status": "NOT_RUN"
+    },
+    {
+      "detail": {},
+      "evidence": "the regenerated AAA-100 / AAA-L solver fields behind the Table 5 panel B parity gate have no public deposit, so the surrogate error cannot be recomputed here and the release carries the closed-form substrate of sensor/surrogate.py instead",
+      "family": "data",
+      "name": "surrogate_substrate_fields",
+      "status": "NOT_RUN"
+    },
+    {
+      "detail": {},
+      "evidence": "the retrospective supporting cohort and the silent-mode arm are de-identified surveillance records held by Sites A, B and C under their own agreements, so no cohort-level endpoint was recomputed",
+      "family": "data",
+      "name": "retrospective_cohort_endpoints",
+      "status": "NOT_RUN"
+    },
+    {
+      "detail": {},
+      "evidence": "the frozen abdominal-CT foundation-model embedding is reached through a gated model card, so the image-context comparison of the hazard head is blocked at the weight level and the release exercises the hazard head on the audit strata alone",
+      "family": "data",
+      "name": "frozen_ct_foundation_embedding",
+      "status": "BLOCKED"
+    },
+    {
+      "detail": {
+        "exit_status": 0
+      },
+      "evidence": "All checks passed!",
+      "family": "tool",
+      "name": "ruff_check",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "exit_status": 0
+      },
+      "evidence": "86 files would be left unchanged.",
+      "family": "tool",
+      "name": "black_check",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "exit_status": 0
+      },
+      "evidence": "Skipped 1 files",
+      "family": "tool",
+      "name": "isort_check",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "exit_status": 0
+      },
+      "evidence": "Success: no issues found",
+      "family": "tool",
+      "name": "mypy_strict",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "exit_status": 0
+      },
+      "evidence": "........................................................................................................................................................................................         [100%]",
+      "family": "tool",
+      "name": "gate_pytest",
+      "status": "PASS"
+    },
+    {
+      "detail": {},
+      "evidence": "no container runtime is available on this host",
+      "family": "tool",
+      "name": "docker_build",
+      "status": "BLOCKED"
+    },
+    {
+      "detail": {
+        "declared": 43,
+        "unread": []
+      },
+      "evidence": "43 declared config keys across configs/, and every one of them is read by src/",
+      "family": "integrity",
+      "name": "configuration_leaves_are_consumed",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "missing": []
+      },
+      "evidence": "76 claim symbols across 26 claims resolve to files on disk",
+      "family": "integrity",
+      "name": "claim_symbol_resolution",
+      "status": "PASS"
+    },
+    {
+      "detail": {
+        "consistent": true,
+        "mismatched": [],
+        "missing": [],
+        "recorded_files": 123,
+        "untracked": []
+      },
+      "evidence": "123 tracked files; missing 0, mismatched 0, untracked 0",
+      "family": "integrity",
+      "name": "integrity_manifest_consistency",
+      "status": "PASS"
+    }
+  ],
+  "code_status": "PARTIALLY_VERIFIED",
+  "executed_scale": {
+    "aggregate": {
+      "BM-STF": {
+        "auroc_crossing": 0.8521325061151691,
+        "auroc_crossing_24": 0.5,
+        "auroc_crossing_24_lower": 0.5,
+        "auroc_crossing_24_upper": 0.5,
+        "auroc_crossing_lower": 0.8199626865671642,
+        "auroc_crossing_upper": 0.8859259259259259,
+        "burden_change_rmse": 0.1367739817356492,
+        "burden_change_rmse_lower": 0.12714792572293587,
+        "burden_change_rmse_upper": 0.1429851414297058,
+        "coverage_burden": 0.8623514211886305,
+        "coverage_burden_high_noise": 0.9583333333333334,
+        "coverage_burden_high_noise_lower": 0.875,
+        "coverage_burden_high_noise_upper": 1.0,
+        "coverage_burden_lower": 0.85,
+        "coverage_burden_upper": 0.8837209302325583,
+        "coverage_diameter": 0.8712532299741603,
+        "coverage_diameter_lower": 0.8666666666666667,
+        "coverage_diameter_upper": 0.875,
+        "crossing_feasible": 0.0030581039755351682,
+        "crossing_feasible_lower": 0.0,
+        "crossing_feasible_upper": 0.009174311926605505,
+        "crossing_pooled": 0.016237655819977336,
+        "crossing_pooled_lower": 0.0,
+        "crossing_pooled_upper": 0.027586206896551724,
+        "crps_diameter": 0.8897094715670191,
+        "crps_diameter_lower": 0.861281890818668,
+        "crps_diameter_upper": 0.9133901510118058,
+        "deferral_fraction": 0.29393736358920364,
+        "deferral_fraction_lower": 0.2535211267605634,
+        "deferral_fraction_upper": 0.36551724137931035,
+        "escalate_fraction": 0.2834542788233723,
+        "escalate_fraction_lower": 0.24827586206896549,
+        "escalate_fraction_upper": 0.3028169014084507,
+        "event_feasible": 0.0,
+        "event_feasible_lower": 0.0,
+        "event_feasible_upper": 0.0,
+        "event_pooled": 0.0,
+        "event_pooled_lower": 0.0,
+        "event_pooled_upper": 0.0,
+        "expected_calibration_error": 0.18279939437151474,
+        "expected_calibration_error_lower": 0.14547413793103448,
+        "expected_calibration_error_upper": 0.206756161971831,
+        "mean_interval_feasible": 18.943399013066443,
+        "mean_interval_feasible_lower": 17.009174311926607,
+        "mean_interval_feasible_upper": 20.09375,
+        "mean_interval_pooled": 14.390369501175186,
+        "mean_interval_pooled_lower": 13.53103448275862,
+        "mean_interval_pooled_upper": 14.978102189781021
+      },
+      "diameter_only": {
+        "auroc_crossing": 0.8501660941827476,
+        "auroc_crossing_24": 0.5,
+        "auroc_crossing_24_lower": 0.5,
+        "auroc_crossing_24_upper": 0.5,
+        "auroc_crossing_lower": 0.8282442748091604,
+        "auroc_crossing_upper": 0.892962962962963,
+        "burden_change_rmse": 0.15394719743724516,
+        "burden_change_rmse_lower": 0.14142922065661037,
+        "burden_change_rmse_upper": 0.1612217079950715,
+        "coverage_burden": 0.8418087855297157,
+        "coverage_burden_high_noise": 0.9166666666666666,
+        "coverage_burden_high_noise_lower": 0.75,
+        "coverage_burden_high_noise_upper": 1.0,
+        "coverage_burden_lower": 0.8000000000000002,
+        "coverage_burden_upper": 0.8720930232558141,
+        "coverage_diameter": 0.8243475452196383,
+        "coverage_diameter_lower": 0.7733333333333333,
+        "coverage_diameter_upper": 0.8625000000000002,
+        "crossing_feasible": 0.0,
+        "crossing_feasible_lower": 0.0,
+        "crossing_feasible_upper": 0.0,
+        "crossing_pooled": 0.01393880524526469,
+        "crossing_pooled_lower": 0.0,
+        "crossing_pooled_upper": 0.02112676056338028,
+        "crps_diameter": 0.9303149686141827,
+        "crps_diameter_lower": 0.8853467366876676,
+        "crps_diameter_upper": 1.0011755789945085,
+        "deferral_fraction": 0.2752295128266031,
+        "deferral_fraction_lower": 0.24647887323943662,
+        "deferral_fraction_upper": 0.3310344827586207,
+        "escalate_fraction": 0.24545305223403516,
+        "escalate_fraction_lower": 0.21379310344827587,
+        "escalate_fraction_upper": 0.28169014084507044,
+        "event_feasible": 0.0,
+        "event_feasible_lower": 0.0,
+        "event_feasible_upper": 0.0,
+        "event_pooled": 0.0,
+        "event_pooled_lower": 0.0,
+        "event_pooled_upper": 0.0,
+        "expected_calibration_error": 0.18026809706717528,
+        "expected_calibration_error_lower": 0.14428879310344828,
+        "expected_calibration_error_upper": 0.2042253521126761,
+        "mean_interval_feasible": 18.31394379614194,
+        "mean_interval_feasible_lower": 16.657894736842106,
+        "mean_interval_feasible_upper": 19.764705882352942,
+        "mean_interval_pooled": 14.520402151139912,
+        "mean_interval_pooled_lower": 13.737931034482761,
+        "mean_interval_pooled_upper": 15.04225352112676
+      },
+      "no_ultrasound": {
+        "auroc_crossing": 0.8474981679107995,
+        "auroc_crossing_24": 0.5,
+        "auroc_crossing_24_lower": 0.5,
+        "auroc_crossing_24_upper": 0.5,
+        "auroc_crossing_lower": 0.8115671641791046,
+        "auroc_crossing_upper": 0.8829629629629631,
+        "burden_change_rmse": 0.13684630815722357,
+        "burden_change_rmse_lower": 0.1273288469942936,
+        "burden_change_rmse_upper": 0.14299676530144942,
+        "coverage_burden": 0.8676421188630491,
+        "coverage_burden_high_noise": 0.875,
+        "coverage_burden_high_noise_lower": 0.625,
+        "coverage_burden_high_noise_upper": 1.0,
+        "coverage_burden_lower": 0.8375,
+        "coverage_burden_upper": 0.8933333333333332,
+        "coverage_diameter": 0.9028552971576227,
+        "coverage_diameter_lower": 0.8533333333333334,
+        "coverage_diameter_upper": 0.9302325581395349,
+        "crossing_feasible": 0.003003003003003003,
+        "crossing_feasible_lower": 0.0,
+        "crossing_feasible_upper": 0.009009009009009009,
+        "crossing_pooled": 0.016237655819977336,
+        "crossing_pooled_lower": 0.0,
+        "crossing_pooled_upper": 0.027586206896551724,
+        "crps_diameter": 0.9269386260235418,
+        "crps_diameter_lower": 0.886442510955796,
+        "crps_diameter_upper": 0.9947528700947902,
+        "deferral_fraction": 0.28925399025582305,
+        "deferral_fraction_lower": 0.25547445255474455,
+        "deferral_fraction_upper": 0.35172413793103446,
+        "escalate_fraction": 0.2692955619445341,
+        "escalate_fraction_lower": 0.23448275862068965,
+        "escalate_fraction_upper": 0.2887323943661972,
+        "event_feasible": 0.0,
+        "event_feasible_lower": 0.0,
+        "event_feasible_upper": 0.0,
+        "event_pooled": 0.0,
+        "event_pooled_lower": 0.0,
+        "event_pooled_upper": 0.0,
+        "expected_calibration_error": 0.1817521220852255,
+        "expected_calibration_error_lower": 0.15215517241379312,
+        "expected_calibration_error_upper": 0.198448905109489,
+        "mean_interval_feasible": 18.578207627712576,
+        "mean_interval_feasible_lower": 16.594594594594593,
+        "mean_interval_feasible_upper": 19.714285714285715,
+        "mean_interval_pooled": 14.348733174278493,
+        "mean_interval_pooled_lower": 13.406896551724138,
+        "mean_interval_pooled_upper": 14.956204379562044
+      },
+      "scalar_noise": {
+        "auroc_crossing": 0.8512085142565375,
+        "auroc_crossing_24": 0.5,
+        "auroc_crossing_24_lower": 0.5,
+        "auroc_crossing_24_upper": 0.5,
+        "auroc_crossing_lower": 0.8274253731343283,
+        "auroc_crossing_upper": 0.8877777777777777,
+        "burden_change_rmse": 0.13727077824973646,
+        "burden_change_rmse_lower": 0.12983847182139277,
+        "burden_change_rmse_upper": 0.14373177037643672,
+        "coverage_burden": 0.8595994832041344,
+        "coverage_burden_high_noise": 0.9583333333333334,
+        "coverage_burden_high_noise_lower": 0.875,
+        "coverage_burden_high_noise_upper": 1.0,
+        "coverage_burden_lower": 0.8249999999999998,
+        "coverage_burden_upper": 0.8933333333333332,
+        "coverage_diameter": 0.8662403100775194,
+        "coverage_diameter_lower": 0.84,
+        "coverage_diameter_upper": 0.8837209302325583,
+        "crossing_feasible": 0.003472222222222222,
+        "crossing_feasible_lower": 0.0,
+        "crossing_feasible_upper": 0.010416666666666666,
+        "crossing_pooled": 0.01637189526959559,
+        "crossing_pooled_lower": 0.007299270072992701,
+        "crossing_pooled_upper": 0.02112676056338028,
+        "crps_diameter": 0.9284623370279057,
+        "crps_diameter_lower": 0.8895169501950413,
+        "crps_diameter_upper": 0.9758637907331159,
+        "deferral_fraction": 0.2892054229901601,
+        "deferral_fraction_lower": 0.2535211267605634,
+        "deferral_fraction_upper": 0.3586206896551724,
+        "escalate_fraction": 0.27650915983357144,
+        "escalate_fraction_lower": 0.23448275862068965,
+        "escalate_fraction_upper": 0.29927007299270075,
+        "event_feasible": 0.0,
+        "event_feasible_lower": 0.0,
+        "event_feasible_upper": 0.0,
+        "event_pooled": 0.0,
+        "event_pooled_lower": 0.0,
+        "event_pooled_upper": 0.0,
+        "expected_calibration_error": 0.18415782470643985,
+        "expected_calibration_error_lower": 0.14870689655172414,
+        "expected_calibration_error_upper": 0.20554577464788734,
+        "mean_interval_feasible": 18.67247747747748,
+        "mean_interval_feasible_lower": 16.43243243243243,
+        "mean_interval_feasible_upper": 19.875,
+        "mean_interval_pooled": 14.291727257580215,
+        "mean_interval_pooled_lower": 13.282758620689656,
+        "mean_interval_pooled_upper": 14.824817518248175
+      },
+      "single_barrier": {
+        "auroc_crossing": 0.8487515243966764,
+        "auroc_crossing_24": 0.5,
+        "auroc_crossing_24_lower": 0.5,
+        "auroc_crossing_24_upper": 0.5,
+        "auroc_crossing_lower": 0.8225190839694655,
+        "auroc_crossing_upper": 0.8944444444444445,
+        "burden_change_rmse": 0.1367739817356492,
+        "burden_change_rmse_lower": 0.12714792572293587,
+        "burden_change_rmse_upper": 0.1429851414297058,
+        "coverage_burden": 0.8573255813953488,
+        "coverage_burden_high_noise": 0.8055555555555555,
+        "coverage_burden_high_noise_lower": 0.6666666666666666,
+        "coverage_burden_high_noise_upper": 1.0,
+        "coverage_burden_lower": 0.8249999999999998,
+        "coverage_burden_upper": 0.9069767441860465,
+        "coverage_diameter": 0.8748772609819122,
+        "coverage_diameter_lower": 0.8266666666666667,
+        "coverage_diameter_upper": 0.9375,
+        "crossing_feasible": 0.014712784409754107,
+        "crossing_feasible_lower": 0.00909090909090909,
+        "crossing_feasible_upper": 0.018518518518518517,
+        "crossing_pooled": 0.025750104283727367,
+        "crossing_pooled_lower": 0.014598540145985403,
+        "crossing_pooled_upper": 0.034482758620689655,
+        "crps_diameter": 0.8789322487516781,
+        "crps_diameter_lower": 0.8144987603174632,
+        "crps_diameter_upper": 0.9194428711995951,
+        "deferral_fraction": 0.34335863321551935,
+        "deferral_fraction_lower": 0.3028169014084507,
+        "deferral_fraction_upper": 0.4206896551724138,
+        "escalate_fraction": 0.20084939539071833,
+        "escalate_fraction_lower": 0.16551724137931034,
+        "escalate_fraction_upper": 0.22535211267605634,
+        "event_feasible": 0.0,
+        "event_feasible_lower": 0.0,
+        "event_feasible_upper": 0.0,
+        "event_pooled": 0.0,
+        "event_pooled_lower": 0.0,
+        "event_pooled_upper": 0.0,
+        "expected_calibration_error": 0.1818570465075882,
+        "expected_calibration_error_lower": 0.14493534482758622,
+        "expected_calibration_error_upper": 0.20070422535211266,
+        "mean_interval_feasible": 20.621150902969084,
+        "mean_interval_feasible_lower": 19.537190082644628,
+        "mean_interval_feasible_upper": 21.381818181818186,
+        "mean_interval_pooled": 17.06180734039272,
+        "mean_interval_pooled_lower": 16.8,
+        "mean_interval_pooled_upper": 17.239436619718308
+      },
+      "single_regime_mean_drift": {
+        "auroc_crossing": 0.8466731035942706,
+        "auroc_crossing_24": 0.5,
+        "auroc_crossing_24_lower": 0.5,
+        "auroc_crossing_24_upper": 0.5,
+        "auroc_crossing_lower": 0.8194962686567164,
+        "auroc_crossing_upper": 0.8903703703703704,
+        "burden_change_rmse": 0.1347196620140426,
+        "burden_change_rmse_lower": 0.12321714995860596,
+        "burden_change_rmse_upper": 0.1445704203851681,
+        "coverage_burden": 0.7968733850129199,
+        "coverage_burden_high_noise": 0.75,
+        "coverage_burden_high_noise_lower": 0.5,
+        "coverage_burden_high_noise_upper": 1.0,
+        "coverage_burden_lower": 0.75,
+        "coverage_burden_upper": 0.8266666666666667,
+        "coverage_diameter": 0.8632235142118864,
+        "coverage_diameter_lower": 0.8488372093023256,
+        "coverage_diameter_upper": 0.8874999999999998,
+        "crossing_feasible": 0.0,
+        "crossing_feasible_lower": 0.0,
+        "crossing_feasible_upper": 0.0,
+        "crossing_pooled": 0.01393880524526469,
+        "crossing_pooled_lower": 0.0,
+        "crossing_pooled_upper": 0.02112676056338028,
+        "crps_diameter": 0.9260884869422269,
+        "crps_diameter_lower": 0.8652033402874769,
+        "crps_diameter_upper": 0.9821042258101821,
+        "deferral_fraction": 0.2987664387195731,
+        "deferral_fraction_lower": 0.2676056338028169,
+        "deferral_fraction_upper": 0.3586206896551724,
+        "escalate_fraction": 0.2620333967898338,
+        "escalate_fraction_lower": 0.2413793103448276,
+        "escalate_fraction_upper": 0.2746478873239437,
+        "event_feasible": 0.0,
+        "event_feasible_lower": 0.0,
+        "event_feasible_upper": 0.0,
+        "event_pooled": 0.0,
+        "event_pooled_lower": 0.0,
+        "event_pooled_upper": 0.0,
+        "expected_calibration_error": 0.18068434201990194,
+        "expected_calibration_error_lower": 0.15258620689655172,
+        "expected_calibration_error_upper": 0.20048415492957747,
+        "mean_interval_feasible": 19.17964695498676,
+        "mean_interval_feasible_lower": 17.672727272727272,
+        "mean_interval_feasible_upper": 20.12621359223301,
+        "mean_interval_pooled": 14.92418259873867,
+        "mean_interval_pooled_lower": 14.13103448275862,
+        "mean_interval_pooled_upper": 15.422535211267606
+      },
+      "single_regime_quiescent": {
+        "auroc_crossing": 0.85670349130795,
+        "auroc_crossing_24": 0.5,
+        "auroc_crossing_24_lower": 0.5,
+        "auroc_crossing_24_upper": 0.5,
+        "auroc_crossing_lower": 0.832089552238806,
+        "auroc_crossing_upper": 0.8881481481481481,
+        "burden_change_rmse": 0.13504276887067693,
+        "burden_change_rmse_lower": 0.1234516103101636,
+        "burden_change_rmse_upper": 0.14802899396149044,
+        "coverage_burden": 0.8179586563307494,
+        "coverage_burden_high_noise": 0.75,
+        "coverage_burden_high_noise_lower": 0.5,
+        "coverage_burden_high_noise_upper": 1.0,
+        "coverage_burden_lower": 0.75,
+        "coverage_burden_upper": 0.8666666666666667,
+        "coverage_diameter": 0.8241731266149871,
+        "coverage_diameter_lower": 0.7441860465116279,
+        "coverage_diameter_upper": 0.875,
+        "crossing_feasible": 0.002898550724637681,
+        "crossing_feasible_lower": 0.0,
+        "crossing_feasible_upper": 0.008695652173913044,
+        "crossing_pooled": 0.016237655819977336,
+        "crossing_pooled_lower": 0.0,
+        "crossing_pooled_upper": 0.027586206896551724,
+        "crps_diameter": 0.9611747609049391,
+        "crps_diameter_lower": 0.8645044472582105,
+        "crps_diameter_upper": 1.0659971346709949,
+        "deferral_fraction": 0.3268524984963055,
+        "deferral_fraction_lower": 0.28169014084507044,
+        "deferral_fraction_upper": 0.4068965517241379,
+        "escalate_fraction": 0.2384593659785713,
+        "escalate_fraction_lower": 0.20689655172413793,
+        "escalate_fraction_upper": 0.2676056338028169,
+        "event_feasible": 0.0,
+        "event_feasible_lower": 0.0,
+        "event_feasible_upper": 0.0,
+        "event_pooled": 0.0,
+        "event_pooled_lower": 0.0,
+        "event_pooled_upper": 0.0,
+        "expected_calibration_error": 0.17709836104680776,
+        "expected_calibration_error_lower": 0.14396551724137932,
+        "expected_calibration_error_upper": 0.20279489436619716,
+        "mean_interval_feasible": 19.474832775919733,
+        "mean_interval_feasible_lower": 17.895652173913042,
+        "mean_interval_feasible_upper": 20.53846153846154,
+        "mean_interval_pooled": 15.518891248320529,
+        "mean_interval_pooled_lower": 14.813793103448276,
+        "mean_interval_pooled_upper": 15.897810218978103
+      },
+      "snapshot": {
+        "auroc_crossing": 0.8348467954966473,
+        "auroc_crossing_24": 0.5,
+        "auroc_crossing_24_lower": 0.5,
+        "auroc_crossing_24_upper": 0.5,
+        "auroc_crossing_lower": 0.8123409669211196,
+        "auroc_crossing_upper": 0.8577777777777778,
+        "burden_change_rmse": NaN,
+        "burden_change_rmse_lower": NaN,
+        "burden_change_rmse_upper": NaN,
+        "coverage_burden": 0.8001808785529715,
+        "coverage_burden_high_noise": 0.7916666666666666,
+        "coverage_burden_high_noise_lower": 0.625,
+        "coverage_burden_high_noise_upper": 1.0,
+        "coverage_burden_lower": 0.75,
+        "coverage_burden_upper": 0.8372093023255814,
+        "coverage_diameter": 1.0,
+        "coverage_diameter_lower": 1.0,
+        "coverage_diameter_upper": 1.0,
+        "crossing_feasible": 0.0030303030303030303,
+        "crossing_feasible_lower": 0.0,
+        "crossing_feasible_upper": 0.00909090909090909,
+        "crossing_pooled": 0.016237655819977336,
+        "crossing_pooled_lower": 0.0,
+        "crossing_pooled_upper": 0.027586206896551724,
+        "crps_diameter": 2.0260613471584876,
+        "crps_diameter_lower": 1.960136865188718,
+        "crps_diameter_upper": 2.0686420369236243,
+        "deferral_fraction": 0.2961991092456239,
+        "deferral_fraction_lower": 0.25547445255474455,
+        "deferral_fraction_upper": 0.36551724137931035,
+        "escalate_fraction": 0.2693326668628264,
+        "escalate_fraction_lower": 0.2413793103448276,
+        "escalate_fraction_upper": 0.291970802919708,
+        "event_feasible": 0.0,
+        "event_feasible_lower": 0.0,
+        "event_feasible_upper": 0.0,
+        "event_pooled": 0.0,
+        "event_pooled_lower": 0.0,
+        "event_pooled_upper": 0.0,
+        "expected_calibration_error": 0.19038617770892494,
+        "expected_calibration_error_lower": 0.15387931034482757,
+        "expected_calibration_error_upper": 0.23217429577464788,
+        "mean_interval_feasible": 19.10422926088025,
+        "mean_interval_feasible_lower": 17.154545454545456,
+        "mean_interval_feasible_upper": 20.38144329896907,
+        "mean_interval_pooled": 14.737838154018498,
+        "mean_interval_pooled_lower": 13.737931034482761,
+        "mean_interval_pooled_upper": 15.306569343065695
+      },
+      "spread_double": {
+        "auroc_crossing": 0.8398314636177328,
+        "auroc_crossing_24": 0.5,
+        "auroc_crossing_24_lower": 0.5,
+        "auroc_crossing_24_upper": 0.5,
+        "auroc_crossing_lower": 0.8138992537313433,
+        "auroc_crossing_upper": 0.8792592592592593,
+        "burden_change_rmse": 0.1367739817356492,
+        "burden_change_rmse_lower": 0.12714792572293587,
+        "burden_change_rmse_upper": 0.1429851414297058,
+        "coverage_burden": 0.8501421188630491,
+        "coverage_burden_high_noise": 0.9583333333333334,
+        "coverage_burden_high_noise_lower": 0.875,
+        "coverage_burden_high_noise_upper": 1.0,
+        "coverage_burden_lower": 0.8249999999999998,
+        "coverage_burden_upper": 0.8720930232558141,
+        "coverage_diameter": 0.9955555555555556,
+        "coverage_diameter_lower": 0.9866666666666667,
+        "coverage_diameter_upper": 1.0,
+        "crossing_feasible": 0.0,
+        "crossing_feasible_lower": 0.0,
+        "crossing_feasible_upper": 0.0,
+        "crossing_pooled": 0.01393880524526469,
+        "crossing_pooled_lower": 0.0,
+        "crossing_pooled_upper": 0.02112676056338028,
+        "crps_diameter": 1.0490278282038286,
+        "crps_diameter_lower": 1.0202301681788433,
+        "crps_diameter_upper": 1.064237272288834,
+        "deferral_fraction": 0.2797786467103654,
+        "deferral_fraction_lower": 0.23943661971830985,
+        "deferral_fraction_upper": 0.35172413793103446,
+        "escalate_fraction": 0.30717401143162354,
+        "escalate_fraction_lower": 0.2620689655172414,
+        "escalate_fraction_upper": 0.33098591549295775,
+        "event_feasible": 0.0,
+        "event_feasible_lower": 0.0,
+        "event_feasible_upper": 0.0,
+        "event_pooled": 0.0,
+        "event_pooled_lower": 0.0,
+        "event_pooled_upper": 0.0,
+        "expected_calibration_error": 0.1860808882787454,
+        "expected_calibration_error_lower": 0.15193965517241378,
+        "expected_calibration_error_upper": 0.2110475352112676,
+        "mean_interval_feasible": 19.201984644667338,
+        "mean_interval_feasible_lower": 16.822429906542055,
+        "mean_interval_feasible_upper": 20.47826086956522,
+        "mean_interval_pooled": 14.171563688701552,
+        "mean_interval_pooled_lower": 13.199999999999998,
+        "mean_interval_pooled_upper": 14.737226277372264
+      },
+      "spread_half": {
+        "auroc_crossing": 0.8615238481046844,
+        "auroc_crossing_24": 0.5,
+        "auroc_crossing_24_lower": 0.5,
+        "auroc_crossing_24_upper": 0.5,
+        "auroc_crossing_lower": 0.8416030534351145,
+        "auroc_crossing_upper": 0.8922222222222222,
+        "burden_change_rmse": 0.1367739817356492,
+        "burden_change_rmse_lower": 0.12714792572293587,
+        "burden_change_rmse_upper": 0.1429851414297058,
+        "coverage_burden": 0.8420865633074935,
+        "coverage_burden_high_noise": 0.9166666666666666,
+        "coverage_burden_high_noise_lower": 0.75,
+        "coverage_burden_high_noise_upper": 1.0,
+        "coverage_burden_lower": 0.7875,
+        "coverage_burden_upper": 0.8720930232558141,
+        "coverage_diameter": 0.6367377260981912,
+        "coverage_diameter_lower": 0.5866666666666667,
+        "coverage_diameter_upper": 0.686046511627907,
+        "crossing_feasible": 0.0030303030303030303,
+        "crossing_feasible_lower": 0.0,
+        "crossing_feasible_upper": 0.00909090909090909,
+        "crossing_pooled": 0.016237655819977336,
+        "crossing_pooled_lower": 0.0,
+        "crossing_pooled_upper": 0.027586206896551724,
+        "crps_diameter": 0.9317271401351758,
+        "crps_diameter_lower": 0.8948906009219035,
+        "crps_diameter_upper": 0.9695913916463047,
+        "deferral_fraction": 0.2939859308548666,
+        "deferral_fraction_lower": 0.2605633802816901,
+        "deferral_fraction_upper": 0.3586206896551724,
+        "escalate_fraction": 0.2715944125192467,
+        "escalate_fraction_lower": 0.2413793103448276,
+        "escalate_fraction_upper": 0.2887323943661972,
+        "event_feasible": 0.0,
+        "event_feasible_lower": 0.0,
+        "event_feasible_upper": 0.0,
+        "event_pooled": 0.0,
+        "event_pooled_lower": 0.0,
+        "event_pooled_upper": 0.0,
+        "expected_calibration_error": 0.18502811746306347,
+        "expected_calibration_error_lower": 0.14655172413793102,
+        "expected_calibration_error_upper": 0.20620598591549297,
+        "mean_interval_feasible": 18.649613328679806,
+        "mean_interval_feasible_lower": 16.69090909090909,
+        "mean_interval_feasible_upper": 19.683673469387756,
+        "mean_interval_pooled": 14.369748620086996,
+        "mean_interval_pooled_lower": 13.386206896551725,
+        "mean_interval_pooled_upper": 14.934306569343066
+      }
+    },
+    "executed_scale": {
+      "alpha1": 0.1,
+      "alpha2": 0.01,
+      "arms": [
+        "BM-STF",
+        "snapshot",
+        "scalar_noise",
+        "no_ultrasound",
+        "single_regime_mean_drift",
+        "single_regime_quiescent",
+        "single_barrier",
+        "diameter_only",
+        "spread_half",
+        "spread_double"
+      ],
+      "base_seed": 20260925,
+      "calibration_patients": 150,
+      "cohort": {
+        "horizon_months": 36,
+        "initial_burden_band": [
+          0.18,
+          0.55
+        ],
+        "initial_diameter_band_mm": [
+          30.0,
+          54.0
+        ],
+        "interval_log_sigma": 0.42,
+        "interval_max_months": 24,
+        "interval_median_months": 8.6,
+        "interval_min_months": 3,
+        "max_observations": 6,
+        "min_observations": 3,
+        "us_probability": 0.35,
+        "us_standard_deviation_mm": 1.1
+      },
+      "decision_row_limit": 2000,
+      "forecast_paths": 64,
+      "horizon_months": 36,
+      "patients": 60,
+      "seeds": 3,
+      "women_share": 0.19
+    },
+    "reported_scale": {
+      "calibration_patients": 6000,
+      "horizon_months": 36,
+      "patients": 300,
+      "seeds": 20
+    },
+    "scalar_noise": [
+      0.5486438713440107,
+      759.0286968988414,
+      0.04756553327763026,
+      0.09410843267503621
+    ]
+  },
+  "failed_checks": [
+    "table4_outcome_pooled_matches_site_sum_composite_event",
+    "table4_outcome_pooled_matches_site_sum_crossing",
+    "table4_outcome_pooled_matches_site_sum_rapid_expansion",
+    "table4_outcome_pooled_matches_site_sum_rupture_symptomatic",
+    "table4_outcome_pooled_matches_site_sum_elective_repair",
+    "table4_silent_arm_split",
+    "table4_audit_stratum_reaches_target",
+    "table5_audit_margin_geometry_only_trajectory",
+    "table5_audit_margin_constant_g_null"
+  ],
+  "families": {
+    "closed_form": {
+      "BLOCKED": 0,
+      "FAIL": 0,
+      "NOT_RUN": 0,
+      "PASS": 37
+    },
+    "data": {
+      "BLOCKED": 1,
+      "FAIL": 0,
+      "NOT_RUN": 3,
+      "PASS": 0
+    },
+    "execution": {
+      "BLOCKED": 0,
+      "FAIL": 0,
+      "NOT_RUN": 2,
+      "PASS": 22
+    },
+    "integrity": {
+      "BLOCKED": 0,
+      "FAIL": 0,
+      "NOT_RUN": 0,
+      "PASS": 3
+    },
+    "manuscript": {
+      "BLOCKED": 0,
+      "FAIL": 9,
+      "NOT_RUN": 0,
+      "PASS": 100
+    },
+    "tool": {
+      "BLOCKED": 1,
+      "FAIL": 0,
+      "NOT_RUN": 0,
+      "PASS": 5
+    }
+  },
+  "integrity_manifest": "integrity_manifest.json is written after this report, after the plain-text summary and after dataset_urls.txt, covers every tracked file including this report, and excludes only itself",
+  "interpretation": "A failure inside the manuscript's own arithmetic is not a defect in this release; code_status excludes the manuscript family. NOT_RUN marks claims that this host cannot settle, and BLOCKED marks artefacts that are not redistributable.",
+  "manuscript_discrepancies": [
+    {
+      "detail": {
+        "anchor": "Table 4 (outcomes at 24 months, pooled against the site sum)",
+        "consistent": false,
+        "detail": {
+          "outcome": "composite_event",
+          "pooled": 1026,
+          "site_sum": 948
+        },
+        "expected": 1026.0,
+        "name": "table4_outcome_pooled_matches_site_sum_composite_event",
+        "observed": 948.0,
+        "op": "eq",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 4 (outcomes at 24 months, pooled against the site sum): observed 948.000000 against reported 1026.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table4_outcome_pooled_matches_site_sum_composite_event",
+      "status": "FAIL"
+    },
+    {
+      "detail": {
+        "anchor": "Table 4 (outcomes at 24 months, pooled against the site sum)",
+        "consistent": false,
+        "detail": {
+          "outcome": "crossing",
+          "pooled": 764,
+          "site_sum": 708
+        },
+        "expected": 764.0,
+        "name": "table4_outcome_pooled_matches_site_sum_crossing",
+        "observed": 708.0,
+        "op": "eq",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 4 (outcomes at 24 months, pooled against the site sum): observed 708.000000 against reported 764.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table4_outcome_pooled_matches_site_sum_crossing",
+      "status": "FAIL"
+    },
+    {
+      "detail": {
+        "anchor": "Table 4 (outcomes at 24 months, pooled against the site sum)",
+        "consistent": false,
+        "detail": {
+          "outcome": "rapid_expansion",
+          "pooled": 404,
+          "site_sum": 386
+        },
+        "expected": 404.0,
+        "name": "table4_outcome_pooled_matches_site_sum_rapid_expansion",
+        "observed": 386.0,
+        "op": "eq",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 4 (outcomes at 24 months, pooled against the site sum): observed 386.000000 against reported 404.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table4_outcome_pooled_matches_site_sum_rapid_expansion",
+      "status": "FAIL"
+    },
+    {
+      "detail": {
+        "anchor": "Table 4 (outcomes at 24 months, pooled against the site sum)",
+        "consistent": false,
+        "detail": {
+          "outcome": "rupture_symptomatic",
+          "pooled": 86,
+          "site_sum": 82
+        },
+        "expected": 86.0,
+        "name": "table4_outcome_pooled_matches_site_sum_rupture_symptomatic",
+        "observed": 82.0,
+        "op": "eq",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 4 (outcomes at 24 months, pooled against the site sum): observed 82.000000 against reported 86.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table4_outcome_pooled_matches_site_sum_rupture_symptomatic",
+      "status": "FAIL"
+    },
+    {
+      "detail": {
+        "anchor": "Table 4 (outcomes at 24 months, pooled against the site sum)",
+        "consistent": false,
+        "detail": {
+          "outcome": "elective_repair",
+          "pooled": 1268,
+          "site_sum": 1202
+        },
+        "expected": 1268.0,
+        "name": "table4_outcome_pooled_matches_site_sum_elective_repair",
+        "observed": 1202.0,
+        "op": "eq",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 4 (outcomes at 24 months, pooled against the site sum): observed 1202.000000 against reported 1268.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table4_outcome_pooled_matches_site_sum_elective_repair",
+      "status": "FAIL"
+    },
+    {
+      "detail": {
+        "anchor": "Table 4 (silent-mode arm: single-observation plus at-least-two-observation records equals retained)",
+        "consistent": false,
+        "detail": {
+          "excluded": 809,
+          "screened": 2416
+        },
+        "expected": 1607.0,
+        "name": "table4_silent_arm_split",
+        "observed": 2098.0,
+        "op": "eq",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 4 (silent-mode arm: single-observation plus at-least-two-observation records equals retained): observed 2098.000000 against reported 1607.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table4_silent_arm_split",
+      "status": "FAIL"
+    },
+    {
+      "detail": {
+        "anchor": "Table 4 (CFD-labelled audit stratum, target 600-700 pairs)",
+        "consistent": false,
+        "detail": {
+          "achieved": 483,
+          "target": [
+            600,
+            700
+          ]
+        },
+        "expected": 600.0,
+        "name": "table4_audit_stratum_reaches_target",
+        "observed": 483.0,
+        "op": "ge",
+        "tolerance": 0.0
+      },
+      "evidence": "Table 4 (CFD-labelled audit stratum, target 600-700 pairs): observed 483.000000 against reported 600.000000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table4_audit_stratum_reaches_target",
+      "status": "FAIL"
+    },
+    {
+      "detail": {
+        "anchor": "Eq. (6) and the clinical-protocol criteria (audit-stratum margin of at least 0.03)",
+        "consistent": false,
+        "detail": {
+          "bm_stf": 0.96,
+          "comparator": "geometry_only_trajectory",
+          "comparator_value": 0.95
+        },
+        "expected": 0.03,
+        "name": "table5_audit_margin_geometry_only_trajectory",
+        "observed": 0.010000000000000009,
+        "op": "ge",
+        "tolerance": 0.0
+      },
+      "evidence": "Eq. (6) and the clinical-protocol criteria (audit-stratum margin of at least 0.03): observed 0.010000 against reported 0.030000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table5_audit_margin_geometry_only_trajectory",
+      "status": "FAIL"
+    },
+    {
+      "detail": {
+        "anchor": "Eq. (6) and the clinical-protocol criteria (audit-stratum margin of at least 0.03)",
+        "consistent": false,
+        "detail": {
+          "bm_stf": 0.96,
+          "comparator": "constant_g_null",
+          "comparator_value": 0.95
+        },
+        "expected": 0.03,
+        "name": "table5_audit_margin_constant_g_null",
+        "observed": 0.010000000000000009,
+        "op": "ge",
+        "tolerance": 0.0
+      },
+      "evidence": "Eq. (6) and the clinical-protocol criteria (audit-stratum margin of at least 0.03): observed 0.010000 against reported 0.030000 (tolerance 0)",
+      "family": "manuscript",
+      "name": "table5_audit_margin_constant_g_null",
+      "status": "FAIL"
+    }
+  ],
+  "overall_status": "UNVERIFIED",
+  "reported_scale": {
+    "calibration_patients": 6000,
+    "forecast_paths": 256,
+    "patients": 300,
+    "run_command": "python3 bmstf_sim.py --seeds 20 --patients 300 --jobs 5",
+    "seeds": 20
+  },
+  "status_counts": {
+    "BLOCKED": 2,
+    "FAIL": 9,
+    "NOT_RUN": 5,
+    "PASS": 167
+  },
+  "unverified_reasons": [
+    "no aneurysm-related event fell inside a recommended interval among the 282 reported decisions of the full mechanism, so the alpha_2 = 0.01 gate carries no information here; the manuscript reports 75 events among 7,617 feasible intervals at 20 seeds of 300 histories",
+    "the decomposed covariance buys +0.000 of high-noise-stratum burden coverage against +0.003 unconditional, a difference of differences of -0.003 with a seed-paired 95 % interval [-0.025, +0.040]; the paired interval of the difference of differences spans zero, so this scale cannot separate the two channels",
+    "the resource landing pages were fetched when dataset_urls.txt was assembled, and this run did not re-probe them: reachability is opt-in with --live so the shipped report stays a function of the repository and not of the network",
+    "the regenerated AAA-100 / AAA-L solver fields behind the Table 5 panel B parity gate have no public deposit, so the surrogate error cannot be recomputed here and the release carries the closed-form substrate of sensor/surrogate.py instead",
+    "the retrospective supporting cohort and the silent-mode arm are de-identified surveillance records held by Sites A, B and C under their own agreements, so no cohort-level endpoint was recomputed",
+    "the frozen abdominal-CT foundation-model embedding is reached through a gated model card, so the image-context comparison of the hazard head is blocked at the weight level and the release exercises the hazard head on the audit strata alone",
+    "no container runtime is available on this host"
+  ]
+}

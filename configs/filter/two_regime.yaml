@@ -1,0 +1,10 @@
+# Two-regime interacting-multiple-model filter with the decomposed covariance.
+#
+# The filter shape is fixed by the manuscript: the arms of Tables 1 and 2 each change one
+# element and are assembled in study/engines.py, so the per-arm flags are not knobs here.
+# What is configurable is the latent-dimension search the protocol specifies.
+selection:
+  latent_dimension_low: 8
+  latent_dimension_high: 16
+  validation_paths: 128
+  validation_records: 48

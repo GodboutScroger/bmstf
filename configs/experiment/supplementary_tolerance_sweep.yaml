@@ -1,0 +1,10 @@
+# Table 3 panel A: the crossing tolerance swept at fixed alpha_2.
+extends: [insilico/base, filter/two_regime, policy/two_barrier]
+experiment:
+  name: supplementary_tolerance_sweep
+  reported_result: Table 3 panel A
+  arms: [BM-STF, single_barrier, calibrated_bands]
+policy:
+  tolerances: [0.05, 0.10, 0.15, 0.20]
+outputs:
+  directory: runs/tolerance_sweep

@@ -1,0 +1,10 @@
+# Two-barrier interval policy at the guideline tolerances.
+#
+# Only the two tolerances are knobs. The rest of the policy is fixed by the manuscript and
+# lives with the code that applies it: the Wilson bound level z_W = 1.645 and the action
+# grid are in policy/wilson.py and policy/barriers.py, the escalate state is scored at the
+# three-month floor in policy/barriers.py, the capped deferral is in replay/estimator.py,
+# and the literal guideline schedule is LITERAL_SCHEDULE_MONTHS in policy/bands.py.
+policy:
+  alpha1: 0.10
+  alpha2: 0.01
