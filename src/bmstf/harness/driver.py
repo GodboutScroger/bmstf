@@ -239,15 +239,26 @@ def run(
     results.append(registry.reported_scale_check())
     results.extend(registry.dataset_checks(live=live))
     if not skip_tools:
-        results.append(registry.tool_check("ruff_check", ["ruff", "check", "."], base))
-        results.append(registry.tool_check("black_check", ["black", "--check", "."], base))
-        results.append(registry.tool_check("isort_check", ["isort", "--check-only", "."], base))
-        results.append(registry.tool_check("mypy_strict", ["mypy", "--strict", "src/bmstf"], base))
+        results.append(
+            registry.tool_check("ruff_check", ["ruff", "check", "."], base, label="ruff")
+        )
+        results.append(
+            registry.tool_check("black_check", ["black", "--check", "."], base, label="black")
+        )
+        results.append(
+            registry.tool_check("isort_check", ["isort", "--check-only", "."], base, label="isort")
+        )
+        results.append(
+            registry.tool_check(
+                "mypy_strict", ["mypy", "--strict", "src/bmstf"], base, label="mypy"
+            )
+        )
         results.append(
             registry.tool_check(
                 "gate_pytest",
                 [sys.executable, "-m", "pytest", "-q"],
                 base,
+                label="pytest",
             )
         )
     results.append(registry.docker_check())

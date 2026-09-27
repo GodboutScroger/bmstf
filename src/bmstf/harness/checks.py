@@ -70,6 +70,7 @@ from bmstf.replay.censoring import fit_censoring
 from bmstf.replay.estimator import ReplayVisit, estimate
 from bmstf.replay.intensity import fit_intensity
 from bmstf.runtime.checkpoint import load_checkpoint, parameter_digest, save_checkpoint
+from bmstf.runtime.journal import get
 from bmstf.runtime.seeds import set_seed
 from bmstf.scoring.calibration import reliability_curve
 from bmstf.scoring.crps import crps_gaussian, crps_mixture_gaussian, crps_sample
@@ -1681,9 +1682,27 @@ def _tool_environment() -> dict[str, str]:
     return environment
 
 
-def tool_check(name: str, command: Sequence[str], root: Path, timeout: int = 1800) -> CheckResult:
+def tool_check(
+    name: str,
+    command: Sequence[str],
+    root: Path,
+    timeout: int = 1800,
+    label: str | None = None,
+) -> CheckResult:
+    """Run a formatter, linter or type check and record a stable verdict.
+
+    The evidence of a passing check is a sentence this release owns, naming the tool by a
+    label the caller supplies. Two things must not be quoted there: a tool's own count of
+    what it skipped, because that depends on which cache directories happen to exist (an
+    import-order check counts `.git` and `.mypy_cache` among them), and the path of the
+    executable, because that is a host input. Either would make the published bytes depend on
+    the machine and on whether the reader ran pytest first. The tool's own output goes to the
+    log; a failing check does quote it, because a failure means the run is not shipping.
+    """
+
+    tool = label if label is not None else Path(str(command[0])).name
     if shutil.which(str(command[0])) is None:
-        return _blocked(name, TOOL, f"{command[0]} is not installed on this host")
+        return _blocked(name, TOOL, f"{tool} is not installed on this host")
     try:
         completed = subprocess.run(
             list(command),
@@ -1696,12 +1715,21 @@ def tool_check(name: str, command: Sequence[str], root: Path, timeout: int = 180
         )
     except (subprocess.TimeoutExpired, FileNotFoundError) as error:
         return _blocked(name, TOOL, f"{type(error).__name__}: {error}")
-    lines = (completed.stdout + completed.stderr).strip().splitlines()
-    evidence = lines[-1] if lines else f"exit status {completed.returncode}"
-    evidence = evidence.split(" in ")[0].strip()
-    return _verdict(
-        name, TOOL, completed.returncode == 0, evidence, exit_status=completed.returncode
+    output = (completed.stdout + completed.stderr).strip()
+    get("verify").info("%s output: %s", name, output.replace("\n", " | ")[-400:])
+    if completed.returncode == 0:
+        return _verdict(
+            name,
+            TOOL,
+            True,
+            f"{tool} ran over the tree and reported nothing to change",
+            exit_status=0,
+        )
+    lines = output.splitlines()
+    evidence = (
+        lines[-1].split(" in ")[0].strip() if lines else f"exit status {completed.returncode}"
     )
+    return _verdict(name, TOOL, False, evidence, exit_status=completed.returncode)
 
 
 def docker_check() -> CheckResult:

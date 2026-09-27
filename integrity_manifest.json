@@ -28,7 +28,7 @@
     "configs/policy/two_barrier.yaml": "f242be0bb76930b3fd5d82776a0a37d0757113b6e34512f4c2b7fdc3beb029c1",
     "dataset_urls.txt": "255196b0a1fa1ab7b5de517b8d1cc8eb78fcb137dd0fa0d7c8191a51dbb419f3",
     "environment.yml": "49dd3f8dc6013d349df6c9e6e7e4901f95372eb2e0c570f8c29658ffd42eabf9",
-    "pyproject.toml": "b33bef22aa4d91d60d4b967cb48fbf5b091cbf9f10ddde69de10d8dea50e8ea7",
+    "pyproject.toml": "d67c47ebfcad67cad811633e97e9b313b7928471e8be566bd869954a3ed23d9f",
     "requirements.txt": "1669df9b7a478484bd92ee6079fd15aef893f4f5348ae005fe202cebfff820c7",
     "scripts/fetch_resources.sh": "f64607ad2dfad8e67a779c3c0ee8b71cf1676a6452aedc6de3c1b25e7c7b1d7e",
     "scripts/run_ablation.sh": "d4cd8e343ae1590a152ed0f80b154d2fbe008c50ffa0bb637ebd858ad3f98a10",
@@ -49,9 +49,9 @@
     "src/bmstf/geometry/template.py": "f0d80db071ff527d9731fc5da3a871fbaddc794662d9cb76f49e5906ef74b1fe",
     "src/bmstf/harness/__init__.py": "dddf1452e28c031a1c479a735cf6aec94803b3eb566c1de63cb276b163c005a0",
     "src/bmstf/harness/artefacts.py": "ce26b493ac8d881d9563c9ae47aa7bbecd521e91b9b6c0116559a2914cf42ec6",
-    "src/bmstf/harness/checks.py": "700fc32c7d1336cc583e2cd47f13fc45b58f2814c94c200eb696181ba0cc8807",
+    "src/bmstf/harness/checks.py": "3b9d87f16b20b1a1d9177309b290b546e0ac65d569b1fc785c2f95099fa274fb",
     "src/bmstf/harness/claims.py": "26725153515f3edc566b63a1b032e8b8e39b2d8afd3fa41eb6e8d283c203e20a",
-    "src/bmstf/harness/driver.py": "3579d0b5c9dfc6991a05cb70f07c2551bc1d408fb1ef722a07c7c4f577ee1d94",
+    "src/bmstf/harness/driver.py": "d9b1f277be6dd0d09233211dbc62b443299a8127f60baf1f5ff87e122748b03a",
     "src/bmstf/inference/__init__.py": "dddf1452e28c031a1c479a735cf6aec94803b3eb566c1de63cb276b163c005a0",
     "src/bmstf/inference/forecast.py": "fe82920f3b4fd8921f53b5dbc1f82535e5f4181e01b3140f414afc258d8088ae",
     "src/bmstf/inference/imm.py": "2df1e6e2cc8b31ea2a85453d936e41e8abbee822484c18b66eb537f7a537650a",
@@ -122,9 +122,9 @@
     "tests/test_training_smoke.py": "1974225bf66b01465d1a8051e37331aa09b22b2608bbf91fcdb89b706962683e",
     "tests/test_transition.py": "1b132a1b0c4b9303bcf4f36dda62dd102c3a4e458ed8c2626966186625345acd",
     "tests/test_verification.py": "f36af1a0d1264d9f8c32dddb09b23b42976a7eab5e89815ed4ba16ff086e0f69",
-    "verification_report.json": "90c0fe3cad188c453e6861cacc89f017bae3f2487a3f8040b22c2a4d86ce2d60",
+    "verification_report.json": "de267886ec43d49a9e859e1d3bcf9b5967e7fd876dca011d4c8b9c59495b795f",
     "verification_summary.txt": "7050f95b300dda989d4765fc21f3ef6c19d3ba5cd1be9be28d2f60873564176d"
   },
-  "manifest_digest": "e8b80d9d80f338c2c30ea27eaf53764d9bec248cefd8fd471da8a08b617c606d",
+  "manifest_digest": "a0446de1426b7a90357cdca5c566d3aabf5cf83f6eb48e7d875e4b461c938676",
   "root": "bmstf"
 }

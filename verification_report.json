@@ -2846,7 +2846,7 @@
       "detail": {
         "exit_status": 0
       },
-      "evidence": "All checks passed!",
+      "evidence": "ruff ran over the tree and reported nothing to change",
       "family": "tool",
       "name": "ruff_check",
       "status": "PASS"
@@ -2855,7 +2855,7 @@
       "detail": {
         "exit_status": 0
       },
-      "evidence": "86 files would be left unchanged.",
+      "evidence": "black ran over the tree and reported nothing to change",
       "family": "tool",
       "name": "black_check",
       "status": "PASS"
@@ -2864,7 +2864,7 @@
       "detail": {
         "exit_status": 0
       },
-      "evidence": "Skipped 1 files",
+      "evidence": "isort ran over the tree and reported nothing to change",
       "family": "tool",
       "name": "isort_check",
       "status": "PASS"
@@ -2873,7 +2873,7 @@
       "detail": {
         "exit_status": 0
       },
-      "evidence": "Success: no issues found",
+      "evidence": "mypy ran over the tree and reported nothing to change",
       "family": "tool",
       "name": "mypy_strict",
       "status": "PASS"
@@ -2882,7 +2882,7 @@
       "detail": {
         "exit_status": 0
       },
-      "evidence": "........................................................................................................................................................................................         [100%]",
+      "evidence": "pytest ran over the tree and reported nothing to change",
       "family": "tool",
       "name": "gate_pytest",
       "status": "PASS"
